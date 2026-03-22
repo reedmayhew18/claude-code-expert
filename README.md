@@ -7,7 +7,7 @@
 [![Reference Guides](https://img.shields.io/badge/Reference%20Guides-8%20comprehensive-green?style=flat-square)](https://github.com/reedmayhew18/claude-code-expert/tree/main/reference)
 [![Sources Analyzed](https://img.shields.io/badge/Sources%20Analyzed-104-yellow?style=flat-square)](#-how-it-was-built)
 [![Size](https://img.shields.io/badge/Size-692KB-lightgrey?style=flat-square)](#)
-[![License: MIT](https://img.shields.io/badge/License-MIT-brightgreen?style=flat-square)](LICENSE)
+[![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue?style=flat-square)](LICENSE)
 
 **The ultimate Claude Code toolkit.** 17 skills, 12 agents, 9 voice styles, and 8 comprehensive reference guides — built by Claude Code after analyzing 104 resources including Anthropic's official documentation, production team reports, and community-tested patterns.
 
@@ -211,7 +211,7 @@ More skills, agents, and voice styles are coming soon.
 
 ## 📄 License
 
-MIT
+AGPL v3 — see [LICENSE](LICENSE)
 
 ---
 
