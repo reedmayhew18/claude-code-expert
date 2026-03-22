@@ -1,0 +1,111 @@
+---
+name: skill-catalog
+description: Browse, install, and uninstall skills and agents from the available library. Check for new ones online. Use when the user says "what skills are available", "install skill", "add skill", "remove skill", "skill catalog", "list available", "check for updates", or wants to set up a project with specific capabilities.
+argument-hint: "[list|install|uninstall|update] [skill-or-agent-name]"
+disable-model-invocation: true
+allowed-tools: Read, Write, Bash, Grep, Glob, WebFetch
+---
+
+# Skill & Agent Catalog
+
+Browse and manage the available skills and agents library. Check GitHub for new additions.
+
+## Commands
+
+### `/skill-catalog list`
+Read and display both index files:
+- `available-skills/INDEX.md` - Skills not currently loaded
+- `available-agents/INDEX.md` - Agents not currently loaded
+
+Also show what's currently active:
+- `.claude/skills/` - Currently loaded skills
+- `.claude/agents/` - Currently loaded agents
+
+### `/skill-catalog install <name>`
+1. Check if `<name>` exists in `available-skills/` (folder) or `available-agents/` (file)
+2. If not found locally, check GitHub (see Update section below) — it may be a newly added skill
+3. Copy to `.claude/skills/<name>/` or `.claude/agents/<name>.md`
+4. Confirm installation
+
+To install into a DIFFERENT project:
+1. Ask for the target project path
+2. Copy to `<target>/.claude/skills/<name>/` or `<target>/.claude/agents/<name>.md`
+3. Create `<target>/.claude/` directories if needed
+
+### `/skill-catalog uninstall <name>`
+1. Check if `<name>` is in active `.claude/skills/` or `.claude/agents/`
+2. Confirm with user before removing
+3. Move back to `available-skills/` or `available-agents/`
+4. Do NOT uninstall core skills (project-init, wizard, tdd, code-review, refactor, context-doctor, skill-creator, grill-me, git-workflow, plan-and-spec, progress-tracker, voice-style, voice-creator, skill-catalog, research, existing-project, new-project)
+
+### `/skill-catalog update`
+Check GitHub for new or updated skills and agents.
+
+**Process:**
+1. Fetch the latest INDEX files from GitHub:
+   ```
+   WebFetch https://raw.githubusercontent.com/reedmayhew18/claude-code-expert/main/available-skills/INDEX.md
+   WebFetch https://raw.githubusercontent.com/reedmayhew18/claude-code-expert/main/available-agents/INDEX.md
+   ```
+
+2. Compare with local INDEX files — identify:
+   - **New entries**: skills/agents on GitHub that don't exist locally
+   - **Updated entries**: descriptions that differ (indicates the skill was improved)
+
+3. For each new/updated item, show the user:
+   - Name and description
+   - Whether it's new or updated
+   - Ask if they want to download it
+
+4. For items the user wants:
+   - **Skills**: Fetch the SKILL.md:
+     ```
+     WebFetch https://raw.githubusercontent.com/reedmayhew18/claude-code-expert/main/available-skills/<name>/SKILL.md
+     ```
+     Save to `available-skills/<name>/SKILL.md`
+     Also check for supporting files (references/, scripts/) by fetching:
+     ```
+     WebFetch https://api.github.com/repos/reedmayhew18/claude-code-expert/contents/available-skills/<name>
+     ```
+     This returns a directory listing. Download any files found.
+
+   - **Agents**: Fetch the agent file:
+     ```
+     WebFetch https://raw.githubusercontent.com/reedmayhew18/claude-code-expert/main/available-agents/<name>.md
+     ```
+     Save to `available-agents/<name>.md`
+
+5. Update local INDEX.md files with any new entries
+
+6. Also check for new reference guides:
+   ```
+   WebFetch https://api.github.com/repos/reedmayhew18/claude-code-expert/contents/reference
+   ```
+   Compare with local `reference/` — offer to download any new guides.
+
+7. Report what was found and what was downloaded.
+
+**If the fetch fails** (no internet, repo not found, etc.):
+- Don't error out — just report "Couldn't reach GitHub. Your local library is still available."
+- Show the local catalog as normal.
+
+### `/skill-catalog setup`
+Interactive project setup:
+1. Ask what kind of project (web, Python, API, content, etc.)
+2. Recommend relevant skills and agents from the library
+3. Install selected ones to the target project
+4. Optionally run `/project-init` to create CLAUDE.md
+
+## GitHub Repository
+- **Repo**: `https://github.com/reedmayhew18/claude-code-expert`
+- **Raw content base**: `https://raw.githubusercontent.com/reedmayhew18/claude-code-expert/main/`
+- **API base**: `https://api.github.com/repos/reedmayhew18/claude-code-expert/contents/`
+
+New skills and agents are added to the GitHub repo regularly. Run `/skill-catalog update` to check for additions.
+
+## Notes
+- Installing a skill/agent here makes it active for the current project
+- For other projects, specify the target path
+- Core skills cannot be uninstalled (they're the Claude Code expertise foundation)
+- Available libraries are at project root: `available-skills/` and `available-agents/`
+- GitHub updates are additive only — they never modify or remove your existing local files
