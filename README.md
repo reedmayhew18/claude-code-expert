@@ -1,4 +1,13 @@
-# Claude Code Expert
+# 🧠 Claude Code Expert
+
+[![Built with Claude Code](https://img.shields.io/badge/Built%20with-Claude%20Code-blueviolet?style=flat-square&logo=anthropic)](https://claude.ai/code)
+[![Skills](https://img.shields.io/badge/Skills-17%20active%20%2B%206%20available-blue?style=flat-square)](https://github.com/reedmayhew18/claude-code-expert/tree/main/.claude/skills)
+[![Agents](https://img.shields.io/badge/Agents-12%20specialized-orange?style=flat-square)](https://github.com/reedmayhew18/claude-code-expert/tree/main/.claude/agents)
+[![Voice Styles](https://img.shields.io/badge/Voice%20Styles-9%20built--in-ff69b4?style=flat-square)](#-voice-styles-9-built-in)
+[![Reference Guides](https://img.shields.io/badge/Reference%20Guides-8%20comprehensive-green?style=flat-square)](https://github.com/reedmayhew18/claude-code-expert/tree/main/reference)
+[![Sources Analyzed](https://img.shields.io/badge/Sources%20Analyzed-104-yellow?style=flat-square)](#-how-it-was-built)
+[![Size](https://img.shields.io/badge/Size-692KB-lightgrey?style=flat-square)](#)
+[![License: MIT](https://img.shields.io/badge/License-MIT-brightgreen?style=flat-square)](LICENSE)
 
 **The ultimate Claude Code toolkit.** 17 skills, 12 agents, 9 voice styles, and 8 comprehensive reference guides — built by Claude Code after analyzing 104 resources including Anthropic's official documentation, production team reports, and community-tested patterns.
 
@@ -6,7 +15,7 @@ Drop it into any project. Start a new one from scratch. Or just clone it and ask
 
 ---
 
-## Get Started in 60 Seconds
+## 🚀 Get Started in 60 Seconds
 
 **First, install Claude Code** (if you haven't already):
 
@@ -32,19 +41,28 @@ Then pick your path:
 
 | You want to... | Run this |
 |---|---|
-| Start a brand new project | `/new-project` |
-| Add the toolkit to an existing project | `/existing-project /path/to/your/project` |
-| Just ask Claude Code questions as an expert | Start typing — the knowledge base is loaded |
+| 🆕 Start a brand new project | `/new-project` |
+| 📦 Add the toolkit to an existing project | `/existing-project /path/to/your/project` |
+| 🧠 Just ask Claude Code questions as an expert | Start typing — the knowledge base is loaded |
 
 That's it. `/new-project` interviews you about what you're building, then creates a fully configured project folder with a tailored CLAUDE.md, selected skills, agents, and the full reference library. `/existing-project` does the same thing non-destructively for a codebase you already have.
 
 ---
 
-## What's Inside
+## 📦 What's Inside
 
-### Skills (17 active + 6 available)
+### 🛠️ Skills (17 active + 6 available)
 
 Skills are reusable workflows that Claude loads automatically when relevant, or that you trigger with `/skill-name`.
+
+#### Project Setup & Management
+| Skill | What it does |
+|---|---|
+| `/new-project` | Create a fully configured new project from scratch |
+| `/existing-project` | Add the toolkit to a project that already exists |
+| `/project-init` | Bootstrap a lean, optimized CLAUDE.md for any codebase |
+| `/progress-tracker` | Save/load/update progress files that survive context resets |
+| `/context-doctor` | Diagnose and fix context window issues when Claude gets confused |
 
 #### Core Workflow
 | Skill | What it does |
@@ -58,15 +76,6 @@ Skills are reusable workflows that Claude loads automatically when relevant, or 
 | `/research` | Structured web research with source evaluation and synthesis |
 | `/git-workflow` | Structured commits, branches, and PRs with safety checks |
 
-#### Project Management
-| Skill | What it does |
-|---|---|
-| `/new-project` | Create a fully configured new project from scratch |
-| `/existing-project` | Add the toolkit to a project that already exists |
-| `/project-init` | Bootstrap a lean, optimized CLAUDE.md for any codebase |
-| `/progress-tracker` | Save/load/update progress files that survive context resets |
-| `/context-doctor` | Diagnose and fix context window issues when Claude gets confused |
-
 #### Meta Skills
 | Skill | What it does |
 |---|---|
@@ -75,16 +84,16 @@ Skills are reusable workflows that Claude loads automatically when relevant, or 
 | `/voice-style` | Switch interaction styles mid-session |
 | `/voice-creator` | Create custom voice styles from examples or descriptions |
 
-#### Available Library (install with `/skill-catalog`, or auto-installed in new projects)
+#### 📚 Available Library (install with `/skill-catalog`, or auto-installed in new projects)
 `brainstorm` · `deploy-checklist` · `project-optimizer` · `python-scaffold` · `seo-content` · `web-scaffold` — and growing.
 
 > **`/project-optimizer`** deserves a special mention: it does a deep read-only scan of your entire project — code, tests, CI/CD, documentation, Claude Code setup — and produces a prioritized report of improvements. It's automatically installed in every new or existing project, but lives in the available library here so it doesn't run on the already-optimized expert toolkit itself.
 
-> **Check for new skills anytime:** Run `/skill-catalog update` to pull the latest skills and agents from this GitHub repo. New ones are added regularly — the update is additive and never touches your existing files.
+> 🔄 **Check for new skills anytime:** Run `/skill-catalog update` to pull the latest skills and agents from this GitHub repo. New ones are added regularly — the update is additive and never touches your existing files.
 
 ---
 
-### Voice Styles (9 built-in)
+### 🎭 Voice Styles (9 built-in)
 
 Switch how Claude talks to you. The code quality stays the same — only the delivery changes.
 
@@ -97,14 +106,14 @@ Switch how Claude talks to you. The code quality stays the same — only the del
 /voice-style pirate           # Code on the high seas, matey
 /voice-style zen-master       # Calm, philosophical, minimalist wisdom
 /voice-style sports-announcer # Every deployment is the championship game
-/voice-style gen-z           # lowkey the best coding assistant ngl 💀
+/voice-style gen-z            # lowkey the best coding assistant ngl 💀
 ```
 
 Want your own? `/voice-creator` builds a custom style from text examples, descriptions, or a reference person.
 
 ---
 
-### Agents (5 active + 7 available)
+### 🤖 Agents (5 active + 7 available)
 
 Agents are specialized AI personas that Claude delegates to automatically. Each runs in its own context window with focused expertise.
 
@@ -124,7 +133,7 @@ Install any of them with `/skill-catalog install <name>`.
 
 ---
 
-### Reference Library (8 guides, 7,752 lines)
+### 📖 Reference Library (8 guides, 7,752 lines)
 
 Comprehensive, clean guides synthesized from 104 sources. Claude reads these on demand — zero context cost until needed.
 
@@ -143,7 +152,7 @@ Every project created with `/new-project` or `/existing-project` gets these guid
 
 ---
 
-### MCP Security Warning
+### 🔒 MCP Security Warning
 
 This toolkit includes a built-in safety mechanism for MCP servers. If a third-party (non-local) MCP server is detected, Claude will issue an explicit security warning explaining exactly what MCP servers can access — your code, your files, your credentials, your conversation — and require acknowledgment before proceeding. Local MCP servers (localhost, private IPs) are allowed without warning.
 
@@ -151,7 +160,7 @@ We believe this is important. Too many people install dozens of third-party MCP 
 
 ---
 
-## How It Was Built
+## 🏗️ How It Was Built
 
 This project was built by Claude Code (Opus 4.6) in a single session using a Level 7 autonomous pipeline:
 
@@ -164,7 +173,7 @@ This project was built by Claude Code (Opus 4.6) in a single session using a Lev
 7. **The active/available split** was designed to keep context lean — only 24% of the skill description budget is used, leaving room for growth
 8. **Cross-platform environment guide** was written from practitioner knowledge to prevent common Claude Code mistakes (like `--break-system-packages` on Ubuntu)
 
-The entire toolkit is **652KB**. Every project created from it inherits the full knowledge base at zero context cost.
+The entire toolkit is **692KB**. Every project created from it inherits the full knowledge base at zero context cost.
 
 ### Does Claude actually believe this is the best solution?
 
@@ -174,7 +183,7 @@ It's not perfect — nothing is. But it's built on the most thorough analysis of
 
 ---
 
-## Project Structure
+## 🗂️ Project Structure
 
 ```
 claude-code-expert/
@@ -192,7 +201,7 @@ claude-code-expert/
 
 ---
 
-## Contributing
+## 🤝 Contributing
 
 The `available-skills/` and `available-agents/` directories are designed to grow. If you've built a skill or agent that would be useful to others, open a PR. Follow the patterns in the existing files — frontmatter, description with trigger phrases, progressive disclosure.
 
@@ -200,10 +209,10 @@ More skills, agents, and voice styles are coming soon.
 
 ---
 
-## License
+## 📄 License
 
 MIT
 
 ---
 
-*Built with Claude Code. Optimized by Claude Code. For Claude Code.*
+*Built with Claude Code. Optimized by Claude Code. For Claude Code.* ✨
