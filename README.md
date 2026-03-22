@@ -17,8 +17,8 @@
 **17 skills · 12 agents · 9 voice styles · 8 reference guides**
 **Built by Claude Code after analyzing 104 resources**
 
-Drop it into any project. Start a new one from scratch. Or just clone it and ask questions.
-**This is Claude Code, fully optimized.**
+Use Claude Code like the experts — without the hours of research, videos, and tutorials.
+Just clone, launch, and go. **This is Claude Code, fully optimized.**
 
 </div>
 
