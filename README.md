@@ -95,13 +95,14 @@ Skills are reusable workflows that Claude loads automatically when relevant, or 
 | `/voice-creator` | Create custom voice styles from examples or descriptions |
 
 #### 📚 Available Library
-> Install with `/skill-catalog install <name>` — or auto-installed when creating new projects
+
+Install with `/skill-catalog install <name>` — or auto-installed when creating new projects.
 
 `brainstorm` · `deploy-checklist` · `project-optimizer` · `python-scaffold` · `seo-content` · `web-scaffold` — and growing.
 
-> **`/project-optimizer`** does a deep read-only scan of your entire project — code, tests, CI/CD, documentation, Claude Code setup — and produces a prioritized report of improvements. Auto-installed in every new project.
+**`/project-optimizer`** does a deep read-only scan of your entire project — code, tests, CI/CD, documentation, Claude Code setup — and produces a prioritized report of improvements. Auto-installed in every new project.
 
-> 🔄 **Check for new skills anytime:** `/skill-catalog update` pulls the latest from this GitHub repo. Additive only — never touches your existing files.
+🔄 **Check for new skills anytime:** `/skill-catalog update` pulls the latest from this GitHub repo. Additive only — never touches your existing files.
 
 ---
 
