@@ -90,19 +90,19 @@ Skills are reusable workflows that Claude loads automatically when relevant, or 
 | Skill | What it does |
 |---|---|
 | `/skill-creator` | Guided skill creation with proper structure and progressive disclosure |
-| `/skill-catalog` | Browse, install, and uninstall skills and agents from the available library |
+| `/skill-store` | Browse, install, and uninstall skills and agents from the available library |
 | `/voice-style` | Switch interaction styles mid-session |
 | `/voice-creator` | Create custom voice styles from examples or descriptions |
 
 #### 📚 Available Library
 
-Install with `/skill-catalog install <name>` — or auto-installed when creating new projects.
+Install with `/skill-store install <name>` — or auto-installed when creating new projects.
 
 `brainstorm` · `deploy-checklist` · `project-optimizer` · `python-scaffold` · `seo-content` · `web-scaffold` — and growing.
 
 **`/project-optimizer`** does a deep read-only scan of your entire project — code, tests, CI/CD, documentation, Claude Code setup — and produces a prioritized report of improvements. Auto-installed in every new project.
 
-🔄 **Check for new skills anytime:** `/skill-catalog update` pulls the latest from this GitHub repo. Additive only — never touches your existing files.
+🔄 **Check for new skills anytime:** `/skill-store update` pulls the latest from this GitHub repo. Additive only — never touches your existing files.
 
 ---
 
@@ -142,7 +142,7 @@ Specialized AI personas that Claude delegates to automatically. Each runs in its
 #### Available Library
 `brainstormer` · `brand-voice-expert` · `creative-writer` (Opus) · `fullstack-dev` · `product-designer` (Opus) · `seo-expert` · `web-designer` (Opus)
 
-Install any with `/skill-catalog install <name>`.
+Install any with `/skill-store install <name>`.
 
 ---
 

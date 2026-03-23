@@ -148,7 +148,7 @@ If yes, for each skill they want customized:
 1. Read the skill's SKILL.md
 2. Rewrite the description and instructions to reference their specific tech stack, conventions, and patterns
 3. Add project-specific examples
-4. Append ` (Customized)` to the end of the `description:` field in the YAML frontmatter — this marks it so `/skill-catalog restore` can identify and revert it later
+4. Append ` (Customized)` to the end of the `description:` field in the YAML frontmatter — this marks it so `/skill-store restore` can identify and revert it later
 5. Save the customized version (replacing the generic one in their project)
 
 Common customizations:

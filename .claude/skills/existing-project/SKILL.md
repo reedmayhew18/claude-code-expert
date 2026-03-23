@@ -129,7 +129,7 @@ If yes, for each skill they want customized:
    - Framework conventions
    - Branch naming and PR conventions
 3. Add project-specific examples
-4. Append ` (Customized)` to the end of the `description:` field in the YAML frontmatter — this marks it so `/skill-catalog restore` can identify and revert it later
+4. Append ` (Customized)` to the end of the `description:` field in the YAML frontmatter — this marks it so `/skill-store restore` can identify and revert it later
 5. Save the customized version (this only modifies files WE just created)
 
 ### Phase 8: Post-Install Optimization Scan (Optional)

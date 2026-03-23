@@ -28,7 +28,7 @@ reference/                          # Claude Code expertise library
 │   ├── refactor/                   # Safe refactoring with char tests
 │   ├── context-doctor/             # Fix context window issues
 │   ├── skill-creator/              # Guided skill creation
-│   ├── skill-catalog/              # Browse/install available skills+agents
+│   ├── skill-store/              # Browse/install available skills+agents
 │   ├── grill-me/                   # Deep interview before building
 │   ├── git-workflow/               # Structured commits, branches, PRs
 │   ├── wizard/                     # 8-phase production implementation
@@ -46,7 +46,7 @@ reference/                          # Claude Code expertise library
 │   └── skill-architect.md          # Skill creation expert (opus)
 └── memory/                         # Project-local persistent memory
 
-available-skills/                   # Skill library (install with /skill-catalog)
+available-skills/                   # Skill library (install with /skill-store)
 ├── INDEX.md                        # One-line descriptions
 ├── brainstorm/                     # Structured ideation
 ├── deploy-checklist/               # Pre-deployment verification
@@ -54,7 +54,7 @@ available-skills/                   # Skill library (install with /skill-catalog
 ├── seo-content/                    # SEO-optimized content
 └── web-scaffold/                   # Scaffold web projects
 
-available-agents/                   # Agent library (install with /skill-catalog)
+available-agents/                   # Agent library (install with /skill-store)
 ├── INDEX.md                        # One-line descriptions
 ├── brainstormer.md                 # Creative ideation (sonnet)
 ├── brand-voice-expert.md           # Brand voice (sonnet)
@@ -68,8 +68,8 @@ available-agents/                   # Agent library (install with /skill-catalog
 ## How to Use
 
 ### Quick Start
-- `/skill-catalog list` - See all available skills and agents
-- `/skill-catalog install <name>` - Install a skill or agent
+- `/skill-store list` - See all available skills and agents
+- `/skill-store install <name>` - Install a skill or agent
 - `/project-init` - Bootstrap Claude Code in a new project
 - `/wizard` - 8-phase production implementation
 - `/voice-style gay-diva` - Switch voice (9 styles available)
@@ -78,7 +78,7 @@ available-agents/                   # Agent library (install with /skill-catalog
 Ask about Claude Code features, patterns, or best practices. Start with `reference/`.
 
 ### Setting Up a New Project
-1. `/skill-catalog setup` - Interactive: recommends skills/agents for your project type
+1. `/skill-store setup` - Interactive: recommends skills/agents for your project type
 2. `/project-init [path]` - Creates tailored CLAUDE.md
 3. Skills and agents copy directly into the target project's `.claude/` folder
 

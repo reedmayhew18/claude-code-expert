@@ -1,6 +1,6 @@
 # Available Skills Library
 
-Skills ready to install into any project. Use `/skill-catalog` to browse and install.
+Skills ready to install into any project. Use `/skill-store` to browse and install.
 
 | Skill | Description |
 |-------|-------------|

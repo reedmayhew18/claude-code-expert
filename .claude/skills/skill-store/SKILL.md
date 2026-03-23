@@ -1,5 +1,5 @@
 ---
-name: skill-catalog
+name: skill-store
 description: Browse, install, and uninstall skills and agents from the available library. Check for new ones online. Use when the user says "what skills are available", "install skill", "add skill", "remove skill", "skill catalog", "list available", "check for updates", or wants to set up a project with specific capabilities.
 argument-hint: "[list|install|uninstall|restore|update] [skill-or-agent-name]"
 disable-model-invocation: true
@@ -12,7 +12,7 @@ Browse and manage the available skills and agents library. Check GitHub for new 
 
 ## Commands
 
-### `/skill-catalog list`
+### `/skill-store list`
 Read and display both index files:
 - `available-skills/INDEX.md` - Skills not currently loaded
 - `available-agents/INDEX.md` - Agents not currently loaded
@@ -21,7 +21,7 @@ Also show what's currently active:
 - `.claude/skills/` - Currently loaded skills
 - `.claude/agents/` - Currently loaded agents
 
-### `/skill-catalog install <name>`
+### `/skill-store install <name>`
 1. Check if `<name>` exists in `available-skills/` (folder) or `available-agents/` (file)
 2. If not found locally, check GitHub (see Update section below) — it may be a newly added skill
 3. Copy to `.claude/skills/<name>/` or `.claude/agents/<name>.md`
@@ -32,13 +32,13 @@ To install into a DIFFERENT project:
 2. Copy to `<target>/.claude/skills/<name>/` or `<target>/.claude/agents/<name>.md`
 3. Create `<target>/.claude/` directories if needed
 
-### `/skill-catalog uninstall <name>`
+### `/skill-store uninstall <name>`
 1. Check if `<name>` is in active `.claude/skills/` or `.claude/agents/`
 2. Confirm with user before removing
 3. Move back to `available-skills/` or `available-agents/`
-4. Do NOT uninstall core skills (project-init, wizard, tdd, code-review, refactor, context-doctor, skill-creator, grill-me, git-workflow, plan-and-spec, progress-tracker, voice-style, voice-creator, skill-catalog, research, existing-project, new-project)
+4. Do NOT uninstall core skills (project-init, wizard, tdd, code-review, refactor, context-doctor, skill-creator, grill-me, git-workflow, plan-and-spec, progress-tracker, voice-style, voice-creator, skill-store, research, existing-project, new-project)
 
-### `/skill-catalog restore <name>`
+### `/skill-store restore <name>`
 Restore a customized skill or agent back to its original version.
 
 1. Check if the skill/agent's `description:` field ends with `(Customized)`
@@ -52,10 +52,10 @@ Restore a customized skill or agent back to its original version.
 5. If they confirm, replace with the original
 6. If the fetch fails, report: "Couldn't reach GitHub to get the original. Check your connection."
 
-### `/skill-catalog restore all`
+### `/skill-store restore all`
 Scan all skills and agents for descriptions ending in `(Customized)`. List them and offer to restore each one individually or all at once.
 
-### `/skill-catalog customize <name>`
+### `/skill-store customize <name>`
 Customize a specific skill or agent for the current project.
 
 1. Read the skill's SKILL.md or agent's .md file
@@ -71,7 +71,7 @@ Customize a specific skill or agent for the current project.
 6. Show the user the changes before saving
 7. Save on confirmation
 
-### `/skill-catalog customize`
+### `/skill-store customize`
 No name specified — interactive mode:
 
 1. List ALL installed skills and agents with numbers:
@@ -92,10 +92,10 @@ No name specified — interactive mode:
 4. For each selected, run the customize process above
 5. Read the project context ONCE at the start, then apply to all selected — don't re-read for each
 
-### `/skill-catalog customize all`
+### `/skill-store customize all`
 Customize every installed skill and agent for the current project. Same as selecting all numbers above.
 
-### `/skill-catalog update`
+### `/skill-store update`
 Check GitHub for new or updated skills and agents.
 
 **Process:**
@@ -146,7 +146,7 @@ Check GitHub for new or updated skills and agents.
 - Don't error out — just report "Couldn't reach GitHub. Your local library is still available."
 - Show the local catalog as normal.
 
-### `/skill-catalog setup`
+### `/skill-store setup`
 Interactive project setup:
 1. Ask what kind of project (web, Python, API, content, etc.)
 2. Recommend relevant skills and agents from the library
@@ -158,7 +158,7 @@ Interactive project setup:
 - **Raw content base**: `https://raw.githubusercontent.com/reedmayhew18/claude-code-expert/main/`
 - **API base**: `https://api.github.com/repos/reedmayhew18/claude-code-expert/contents/`
 
-New skills and agents are added to the GitHub repo regularly. Run `/skill-catalog update` to check for additions.
+New skills and agents are added to the GitHub repo regularly. Run `/skill-store update` to check for additions.
 
 ## Notes
 - Installing a skill/agent here makes it active for the current project

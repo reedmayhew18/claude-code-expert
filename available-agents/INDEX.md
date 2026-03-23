@@ -1,6 +1,6 @@
 # Available Agents Library
 
-Specialized agents ready to install into any project. Use `/skill-catalog` to browse and install.
+Specialized agents ready to install into any project. Use `/skill-store` to browse and install.
 
 | Agent | Model | Description |
 |-------|-------|-------------|
