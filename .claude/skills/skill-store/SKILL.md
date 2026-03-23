@@ -1,7 +1,7 @@
 ---
 name: skill-store
 description: Browse, install, and uninstall skills and agents from the available library. Check for new ones online. Use when the user says "what skills are available", "install skill", "add skill", "remove skill", "skill catalog", "list available", "check for updates", or wants to set up a project with specific capabilities.
-argument-hint: "[list|install|uninstall|restore|update] [skill-or-agent-name]"
+argument-hint: "[list|install|install-agent|uninstall|restore|update] [skill-or-agent-name]"
 disable-model-invocation: true
 allowed-tools: Read, Write, Bash, Grep, Glob, WebFetch
 ---
@@ -39,12 +39,22 @@ Also show what's currently active:
 - `.claude/agents/` - Currently loaded agents
 
 ### `/skill-store install <name>`
-1. Check if `<name>` exists in `available-skills/` (folder) or `available-agents/` (file)
-2. If not found locally, check GitHub (see Update section below) — it may be a newly added skill
-3. Copy to `.claude/skills/<name>/` or `.claude/agents/<name>.md`
+Install a skill from the available library.
+1. Check if `<name>` exists in `available-skills/` (folder)
+2. If not found locally, check GitHub (see Update section below)
+3. Copy to `.claude/skills/<name>/`
 4. Confirm installation
 
-To install into a DIFFERENT project:
+### `/skill-store install-agent <name>`
+Install an agent from the available library.
+1. Check if `<name>` exists in `available-agents/` (file)
+2. If not found locally, check GitHub (see Update section below)
+3. Copy to `.claude/agents/<name>.md`
+4. Confirm installation
+
+Note: `install` also works for agents (auto-detects whether it's a skill or agent), but `install-agent` is preferred for clarity.
+
+**To install into a DIFFERENT project** (works for both):
 1. Ask for the target project path
 2. Copy to `<target>/.claude/skills/<name>/` or `<target>/.claude/agents/<name>.md`
 3. Create `<target>/.claude/` directories if needed

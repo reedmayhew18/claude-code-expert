@@ -180,10 +180,21 @@ Specialized AI personas that Claude delegates to automatically. Each runs in its
 | `skill-architect` | Opus | Expert on building and optimizing Claude Code skills |
 | `orchestrator` | Sonnet | Coordinates multi-step workflows and delegates to specialist agents |
 
-#### Available Library
-`brainstormer` · `brand-voice-expert` · `creative-writer` (Opus) · `fullstack-dev` · `product-designer` (Opus) · `seo-expert` · `web-designer` (Opus) · `neural-architect` (Opus) · `pytorch-dev` · `hf-ml-engineer` · `ml-trainer`
+#### Available Library (11 agents — install with `/skill-store install-agent`)
 
-Install any with `/skill-store install <name>`.
+| Agent | Model | What it does |
+|---|---|---|
+| `brainstormer` | Sonnet | Creative ideation with divergent/convergent thinking frameworks |
+| `brand-voice-expert` | Sonnet | Brand voice, tone profiles, content pillars, audience personas |
+| `creative-writer` | Opus | Blog posts, articles, copywriting, social media with anti-AI checklist |
+| `fullstack-dev` | Sonnet | JS/TS, React, Next.js, Node, databases, APIs — type-safe end-to-end |
+| `product-designer` | Opus | PRDs, user stories, acceptance criteria, roadmaps |
+| `seo-expert` | Sonnet | On-page SEO, content optimization, technical SEO, AI search |
+| `web-designer` | Opus | HTML/CSS/JS, React, accessibility (WCAG 2.1 AA), responsive design |
+| `neural-architect` | Opus | Neural network architecture: CNNs, transformers, encoder-decoder, latent spaces |
+| `pytorch-dev` | Sonnet | PyTorch implementation: nn.Module, custom layers, loss functions, debugging |
+| `hf-ml-engineer` | Sonnet | HuggingFace/LLM fine-tuning: transformers, PEFT, Unsloth, tokenizers |
+| `ml-trainer` | Sonnet | Training infrastructure: distributed training, memory optimization, profiling |
 
 ---
 
