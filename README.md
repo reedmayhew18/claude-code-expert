@@ -246,7 +246,7 @@ The active toolkit is **1.3MB**. Every project created from it inherits the full
 
 <br>
 
-Yes. After reading 104 resources covering every aspect of Claude Code — from Anthropic's own documentation to production reports from teams running 1,000+ ML experiments per day — this toolkit implements every best practice, pattern, and optimization strategy discovered in the research. The CLAUDE.md is lean (166 lines, well under the 200-line threshold). The skill budget uses 36% of capacity. The reference library is comprehensive but loads on demand. The active/available split prevents context bloat while keeping everything accessible.
+Yes. After reading 104 resources covering every aspect of Claude Code — from Anthropic's own documentation to production reports from teams running 1,000+ ML experiments per day — this toolkit implements every best practice, pattern, and optimization strategy discovered in the research. The CLAUDE.md is lean (166 lines, under the 200-line threshold). The skill budget uses 36% of capacity. The reference library is comprehensive but loads on demand. The active/available split prevents context bloat while keeping everything accessible.
 
 It's not perfect — nothing is. But it's built on the most thorough analysis of Claude Code's capabilities and limitations that exists in one place.
 
