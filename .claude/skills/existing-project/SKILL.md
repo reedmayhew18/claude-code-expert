@@ -25,8 +25,14 @@ Present a brief summary: "Here's what your project has, here's what I'll add."
 ### Phase 2: Interview (Light)
 Only ask questions not already answered by the scan:
 1. Any conventions or rules you want Claude to know about? (Skip if CLAUDE.md already covers this)
-2. Show the available skills/agents list — want any extras beyond the essentials?
-3. Which CLAUDE.md integration level do you want? (Explain the three options below)
+2. **Document formats** — Will you need to create or work with any of these?
+   - PDF (create, read, merge, OCR)
+   - Word documents (.docx)
+   - PowerPoint presentations (.pptx)
+   - Excel spreadsheets (.xlsx)
+   Install the corresponding skill for each one they say yes to.
+3. Show the available skills/agents list — want any extras beyond the essentials?
+4. Which CLAUDE.md integration level do you want? (Explain the three options below)
 
 ### Phase 3: Install Reference Library
 Copy `reference/*.md` to `<target>/reference/`.

@@ -18,7 +18,13 @@ Ask the user (keep it conversational, not a form):
 2. **What are you building?** - Web app, API, CLI tool, Python package, static site, content project, data pipeline, mobile app, or something else?
 3. **Tech stack** - Languages, frameworks, databases? (If they don't know, recommend based on what they're building)
 4. **Scope** - Quick prototype, side project, or production app?
-5. **Special needs** - Any of these relevant?
+5. **Document formats** - Will you need to create or work with any of these?
+   - PDF (create, read, merge, OCR)
+   - Word documents (.docx)
+   - PowerPoint presentations (.pptx)
+   - Excel spreadsheets (.xlsx)
+   Install the corresponding skill for each one they say yes to.
+6. **Special needs** - Any of these relevant?
    - SEO / content marketing
    - Brand voice / content creation
    - Complex frontend / web design

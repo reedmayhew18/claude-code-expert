@@ -1,5 +1,5 @@
 ---
-name: web-scaffold
+name: web-starter
 description: Scaffold a new web project with modern best practices. Use when the user says "create a website", "new web project", "landing page", "scaffold", "starter", or "set up a web app".
 argument-hint: "[project type] [tech preferences]"
 disable-model-invocation: true
