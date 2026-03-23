@@ -44,6 +44,8 @@ It's OK to briefly explain terms if you're in doubt, and feel free to clarify te
 
 ## Creating a skill
 
+**Before starting: read `references/skill-architecture.md` for the full architecture checklist.** It covers six components every skill should be evaluated against: Name & Trigger, Goal, Dependencies, Context, Process (with human checkpoints), and Output. Use its interview questions during the Capture Intent and Interview phases below.
+
 ### Capture Intent
 
 Start by understanding the user's intent. The current conversation might already contain a workflow the user wants to capture (e.g., they say "turn this into a skill"). If so, extract answers from the conversation history first — the tools used, the sequence of steps, corrections the user made, input/output formats observed. The user may need to fill the gaps, and should confirm before proceeding to the next step.
@@ -466,6 +468,7 @@ The agents/ directory contains instructions for specialized subagents. Read them
 
 The references/ directory has additional documentation:
 - `references/schemas.md` — JSON structures for evals.json, grading.json, etc.
+- `references/skill-architecture.md` — **Read this before every skill creation session.** Full architecture checklist covering: Name & Trigger, Goal, Dependencies (tools + connectors), Context (brand voice, ICP, domain knowledge), Process (with human checkpoint placement), and Output (format, save location, deliverable). Includes interview questions for each component and frontmatter decision table.
 
 ---
 
