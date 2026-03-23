@@ -11,3 +11,7 @@ Specialized agents ready to install into any project. Use `/skill-store` to brow
 | `product-designer` | opus | PRDs, user stories, acceptance criteria, roadmaps. Grill-me + plan-and-spec |
 | `seo-expert` | sonnet | On-page SEO, content optimization, technical SEO, AI search optimization |
 | `web-designer` | opus | HTML/CSS/JS, React, accessibility (WCAG 2.1 AA), responsive, performance |
+| `neural-architect` | opus | Neural network architecture design: CNNs, transformers, encoder-decoder, latent spaces, backbone selection |
+| `pytorch-dev` | sonnet | PyTorch implementation: nn.Module, custom layers, loss functions, tensor ops, training debugging |
+| `hf-ml-engineer` | sonnet | HuggingFace/LLM fine-tuning: transformers, PEFT, Unsloth, tokenizers, model hub, inference |
+| `ml-trainer` | sonnet | Training infrastructure: distributed training, memory optimization, experiment tracking, profiling |
