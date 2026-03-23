@@ -7,14 +7,14 @@
 [![Built with Claude Code](https://img.shields.io/badge/Built%20with-Claude%20Code-blueviolet?style=for-the-badge&logo=anthropic)](https://claude.ai/code)
 [![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue?style=for-the-badge)](LICENSE)
 
-[![Skills](https://img.shields.io/badge/Skills-17%20active%20·%206%20available-0078D4?style=flat-square)](https://github.com/reedmayhew18/claude-code-expert/tree/main/.claude/skills)
-[![Agents](https://img.shields.io/badge/Agents-12%20specialized-E86C00?style=flat-square)](https://github.com/reedmayhew18/claude-code-expert/tree/main/.claude/agents)
+[![Skills](https://img.shields.io/badge/Skills-19%20active%20·%2024%20available-0078D4?style=flat-square)](https://github.com/reedmayhew18/claude-code-expert/tree/main/.claude/skills)
+[![Agents](https://img.shields.io/badge/Agents-16%20specialized-E86C00?style=flat-square)](https://github.com/reedmayhew18/claude-code-expert/tree/main/.claude/agents)
 [![Voice Styles](https://img.shields.io/badge/Voice%20Styles-9%20built--in-ff69b4?style=flat-square)](#-voice-styles-9-built-in)
 [![Reference](https://img.shields.io/badge/Reference%20Guides-8%20·%207%2C752%20lines-2ea44f?style=flat-square)](https://github.com/reedmayhew18/claude-code-expert/tree/main/reference)
 [![Sources](https://img.shields.io/badge/Sources%20Analyzed-104-FFD700?style=flat-square)](#-how-it-was-built)
 [![Size](https://img.shields.io/badge/Total%20Size-692KB-lightgrey?style=flat-square)](#)
 
-**17 skills · 12 agents · 9 voice styles · 8 reference guides**
+**43 skills · 16 agents · 9 voice styles · 8 reference guides**
 **Built by Claude Code after analyzing 104 resources**
 
 Drop it into any project. Start a new one from scratch. Or just clone it and ask questions.<br>
@@ -61,7 +61,7 @@ That's it. `/new-project` interviews you about what you're building, then create
 
 ## 📦 What's Inside
 
-### 🛠️ Skills (17 active + 6 available)
+### 🛠️ Skills (19 active + 24 available)
 
 Skills are reusable workflows that Claude loads automatically when relevant, or that you trigger with `/skill-name`.
 
@@ -98,7 +98,11 @@ Skills are reusable workflows that Claude loads automatically when relevant, or 
 
 Install with `/skill-store install <name>` — or auto-installed when creating new projects.
 
-`brainstorm` · `deploy-checklist` · `project-optimizer` · `python-scaffold` · `seo-content` · `web-scaffold` — and growing.
+**Document Formats:** `docx` · `pdf` · `pptx` · `xlsx`
+**General:** `brainstorm` · `deploy-checklist` · `doc-coauthoring` · `project-optimizer` · `python-scaffold` · `seo-content` · `web-starter`
+**Creative:** `algorithmic-art` · `canvas-design` · `slack-gif-creator` · `theme-factory` · `web-artifacts-builder`
+**Developer:** `mcp-builder` · `webapp-testing`
+**ML/AI:** `pytorch-training-loop` · `torch-optimize` · `hf-finetune` · `unsloth-finetune` · `model-export` · `training-infra`
 
 **`/project-optimizer`** does a deep read-only scan of your entire project — code, tests, CI/CD, documentation, Claude Code setup — and produces a prioritized report of improvements. Auto-installed in every new project.
 
@@ -126,7 +130,7 @@ Want your own? `/voice-creator` builds a custom style from text examples, descri
 
 ---
 
-### 🤖 Agents (5 active + 7 available)
+### 🤖 Agents (5 active + 11 available)
 
 Specialized AI personas that Claude delegates to automatically. Each runs in its own context window.
 
@@ -140,7 +144,7 @@ Specialized AI personas that Claude delegates to automatically. Each runs in its
 | `skill-architect` | Opus | Expert on building and optimizing Claude Code skills |
 
 #### Available Library
-`brainstormer` · `brand-voice-expert` · `creative-writer` (Opus) · `fullstack-dev` · `product-designer` (Opus) · `seo-expert` · `web-designer` (Opus)
+`brainstormer` · `brand-voice-expert` · `creative-writer` (Opus) · `fullstack-dev` · `product-designer` (Opus) · `seo-expert` · `web-designer` (Opus) · `neural-architect` (Opus) · `pytorch-dev` · `hf-ml-engineer` · `ml-trainer`
 
 Install any with `/skill-store install <name>`.
 
@@ -209,12 +213,12 @@ claude-code-expert/
 ├── README.md                     # You are here
 ├── reference/                    # 8 expert guides (7,752 lines)
 ├── .claude/
-│   ├── skills/                   # 17 active skills
+│   ├── skills/                   # 19 active skills
 │   │   └── voice-style/styles/   # 9 voice templates
 │   ├── agents/                   # 5 active agents
 │   └── memory/                   # Project-local memory
-├── available-skills/             # 6 installable skills
-└── available-agents/             # 7 installable agents
+├── available-skills/             # 24 installable skills
+└── available-agents/             # 11 installable agents
 ```
 
 ---
