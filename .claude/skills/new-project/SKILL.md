@@ -201,22 +201,35 @@ Common customizations:
 - **Git workflow**: Add their branch naming convention and PR template
 - **Wizard**: Add their specific build/test/lint commands to each phase
 
-### Phase 6: Confirm
-Summarize what was created:
-- Project path
-- Skills installed (count)
-- Agents installed (count)
-- Voice styles available
-- Next steps for the user
+### Phase 6: Write post_install.md
 
-Suggest: "cd into your new project and start with `/grill-me` to plan your first feature, or `/wizard` to implement something right away."
+**Always create `post_install.md` in the new project root.** This is the handoff document that the user's first Claude session in the new project will execute.
+
+Include:
+- **What Was Installed**: skills (by category, note customized ones), agents, reference guides, voice styles, CLAUDE.md details
+- **Action Items**: tools to install (linters, test runners), permissions to configure, any setup steps the new project needs
+- **Key Skills to Try**: table of most relevant skills with when-to-use guidance
+- **Final item**: "Delete this file once you've completed all action items"
+
+### Phase 7: Final Instructions to User
+
+Tell the user:
+```
+Project created! To get started:
+
+1. cd ../<project-name>
+2. Start Claude: `claude`
+3. Run: `execute post_install.md`
+
+Claude will read the handoff document and complete the remaining setup steps.
+```
 
 ## Output
 
 - **Save location:** `../<project-name>/` (adjacent to this repo in the parent directory)
-- **Final deliverable:** A fully populated project directory containing `CLAUDE.md`, `.claude/skills/`, `.claude/agents/`, `.claude/settings.json`, `reference/`, and `.gitignore`
+- **Final deliverable:** A fully populated project directory containing `CLAUDE.md`, `.claude/skills/`, `.claude/agents/`, `.claude/settings.json`, `reference/`, `post_install.md`, and `.gitignore`
 - **Format:** Directory tree with files (not a single document)
-- **Confirmation:** Phase 6 summary printed to chat; project is immediately usable via `cd ../<project-name> && claude`
+- **Handoff:** `post_install.md` enables the new project's Claude instance to self-configure on first launch
 
 ## Important Notes
 - This skill creates files OUTSIDE the current project directory (in the parent). This is the intended behavior.

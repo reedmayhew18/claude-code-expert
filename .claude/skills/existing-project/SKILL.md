@@ -208,25 +208,71 @@ If yes, run `/project-optimizer full` (which we just installed). This does a com
 
 This is the difference between "is your Claude Code setup good?" (Phase 8) and "is your project itself good?" (Phase 8.5).
 
-### Phase 9: Summary
+### Phase 9: Write post_install.md
 
-Report everything:
+**Always create `post_install.md` in the target project root.** This is the handoff document that the user's next Claude session will execute to finish setup.
+
+The file should follow this structure:
+
+```markdown
+# Post-Install — Claude Code Expert Toolkit ([date])
+
+[User name] just installed the Claude Code expert toolkit into this project. Here's what changed and what needs to happen next.
+
+## What Was Installed
+
+### [N] new skills in `.claude/skills/`
+[List skills by category. Note which ones were customized with (Customized) tag.]
+
+### [N] new agents in `.claude/agents/`
+[List agents and their roles.]
+
+### [N] reference guides in `reference/`
+[Brief note about the expertise library.]
+
+### [N] voice style templates
+[Note available styles.]
+
+### CLAUDE.md updated ([integration level chosen])
+[What was added/changed. Note final line count.]
+
+## Action Items
+
+### 1. [Most critical post-install task]
+[Specific command to run, e.g., install a linter, verify test runner]
+
+### 2. [Second task]
+[...]
+
+### 3. [Optimization recommendations if scan was run]
+[From Phase 8/8.5 findings]
+
+### N. Delete this file
+Once you've read and acted on this, delete `post_install.md` — it's a one-time handoff document.
+
+---
+
+## Key Skills to Try
+[Table of most relevant installed skills with one-line descriptions and when to use each]
 ```
-Installed:
-  Skills: 12 added, 2 skipped (already existed)
-  Agents: 4 added
-  Reference guides: 8 added
-  Voice styles: 8 added
 
-CLAUDE.md: [Option chosen] - [what changed]
+Include action items for:
+- Any tools referenced in CLAUDE.md that aren't yet installed (linters, test runners, formatters)
+- Permission adjustments needed in settings
+- Optimization recommendations from Phase 8/8.5 (if run)
+- Any customization follow-ups
 
-Post-install scan: [findings if run, or "skipped"]
+### Phase 10: Final Instructions to User
 
-Next steps:
-  - cd to your project and run `claude`
-  - Try `/wizard` to implement your next feature
-  - Try `/voice-style concise` for terse responses
-  - Run `/context` to see your context budget
+Tell the user:
+```
+Installation complete! To finish setup:
+
+1. cd <target-project-path>
+2. Start Claude: `claude`
+3. Run: `execute post_install.md`
+
+Claude will read the handoff document and complete the remaining setup steps.
 ```
 
 ## Important Rules
