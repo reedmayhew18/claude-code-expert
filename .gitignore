@@ -1,2 +1,6 @@
 .claude/settings.local.json
 .claude/memory/
+
+# Downloaded font files (fetched on demand by canvas-design skill)
+available-skills/canvas-design/canvas-fonts/*.ttf
+available-skills/canvas-design/canvas-fonts/*.txt
