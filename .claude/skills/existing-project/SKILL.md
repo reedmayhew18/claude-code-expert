@@ -11,16 +11,33 @@ Add the Claude Code expert toolkit to a project that already exists. Non-destruc
 
 ## Process
 
-### Phase 1: Assess Current State
-Scan the target project silently. Read but do not modify:
+### Phase 1: Analyze the Project
+Scan the target project thoroughly. Read but do not modify:
 - `CLAUDE.md` — read fully, note line count, understand existing rules
 - `.claude/` — check for skills, agents, settings, rules
 - `.claude/settings.json` — note existing permissions and hooks
 - `reference/` — check if our guides are already installed
-- Tech stack files: package.json, pyproject.toml, Cargo.toml, go.mod, Makefile, etc.
-- README.md for project context
+- Tech stack files: package.json, pyproject.toml, Cargo.toml, go.mod, Makefile, Dockerfile, etc.
+- README.md, CONTRIBUTING.md for project context
+- Source directory structure (src/, lib/, app/, etc.)
+- Test directory structure and test framework
+- CI/CD config (.github/workflows/, .gitlab-ci.yml)
 
-Present a brief summary: "Here's what your project has, here's what I'll add."
+**Auto-detect and recommend** relevant available skills and agents based on what you find:
+
+| You detect... | Recommend |
+|---|---|
+| Python files, pyproject.toml, requirements.txt | `python-expert` agent, `python-scaffold` skill |
+| React/Vue/Svelte, package.json with frontend deps | `web-designer` agent, `frontend-design` skill |
+| PyTorch, transformers, ML model code | `pytorch-dev` agent, `neural-architect` agent, ML skills |
+| Express/Fastify/Next.js, API routes | `fullstack-dev` agent |
+| Dockerfile, K8s manifests, IaC | `deploy-checklist` skill |
+| .docx/.pdf/.xlsx/.pptx files or generation code | Corresponding document format skills |
+| Marketing/content directories, blog posts | `seo-content`, `creative-writer` agent |
+| Test files with low coverage | `tdd` skill emphasis |
+| Playwright/Cypress config | `webapp-testing` skill |
+
+Present: "I've analyzed your project. Here's what I found: [summary]. Based on your tech stack, I'd recommend these additional skills/agents: [list]. Want to include them?"
 
 ### Phase 2: Interview (Light)
 Only ask questions not already answered by the scan:
@@ -31,8 +48,9 @@ Only ask questions not already answered by the scan:
    - PowerPoint presentations (.pptx)
    - Excel spreadsheets (.xlsx)
    Install the corresponding skill for each one they say yes to.
-3. Show the available skills/agents list — want any extras beyond the essentials?
-4. Which CLAUDE.md integration level do you want? (Explain the three options below)
+3. Present auto-recommended skills/agents from Phase 1 — confirm or adjust
+4. Want any additional extras from the available library? (Show remaining options)
+5. Which CLAUDE.md integration level do you want? (Explain the three options below)
 
 ### Phase 3: Install Reference Library
 Copy `reference/*.md` to `<target>/reference/`.

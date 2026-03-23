@@ -11,7 +11,18 @@ Create a new project folder adjacent to this expertise repo, fully configured wi
 
 ## Process
 
-### Phase 1: Interview
+### Phase 1: Choose Setup Style
+Ask the user how they want to set up:
+
+**Option A: Quick Setup** (default — light Q&A, ~5 questions)
+Get the essentials and start building. Best for simple projects or users who want to get going fast.
+
+**Option B: Deep Setup** (`/grill-me` — thorough interview)
+Walk every branch of the design tree. Best for complex projects or when the user wants to think everything through before starting.
+
+Suggest Quick Setup as default. If the user says "grill me" or asks for the thorough version, switch to Option B (run `/grill-me` and use its output to inform the rest of the setup).
+
+### Phase 1a: Quick Setup Interview
 Ask the user (keep it conversational, not a form):
 
 1. **Project name** - What should the folder be called?
