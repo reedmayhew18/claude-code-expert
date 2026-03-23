@@ -68,8 +68,8 @@ Skills are reusable workflows that Claude loads automatically when relevant, or 
 #### Project Setup & Management
 | Skill | What it does |
 |---|---|
-| `/new-project` | Create a fully configured new project from scratch |
-| `/existing-project` | Add the toolkit to a project that already exists |
+| `/new-project` | Create a fully configured new project — quick setup or deep `/grill-me` interview |
+| `/existing-project` | Add the toolkit to an existing project — auto-analyzes codebase and recommends relevant skills/agents |
 | `/project-init` | Bootstrap a lean, optimized CLAUDE.md for any codebase |
 | `/progress-tracker` | Save/load/update progress files that survive context resets |
 | `/context-doctor` | Diagnose and fix context window issues when Claude gets confused |
@@ -82,7 +82,7 @@ Skills are reusable workflows that Claude loads automatically when relevant, or 
 | `/tdd` | Strict red-green-refactor test-driven development |
 | `/code-review` | Isolated code review running in a dedicated subagent |
 | `/refactor` | Safe refactoring with characterization tests as a safety net |
-| `/grill-me` | Deep interview that walks every branch of the design tree until zero ambiguity remains |
+| `/grill-me` | Deep interview that walks every branch of the design tree. Use `lightly` for a quick 5-8 question version. Pre-fills from existing codebase |
 | `/research` | Structured web research with source evaluation and synthesis |
 | `/git-workflow` | Structured commits, branches, and PRs with safety checks |
 
