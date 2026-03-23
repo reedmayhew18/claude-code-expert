@@ -235,7 +235,7 @@ This project was built by Claude Code (Opus 4.6) in a single session using a Lev
 3. **Skills were designed** based on patterns extracted from the research: the wizard methodology, the grill-me pattern, spec-driven planning, progressive disclosure, context management strategies
 4. **Agents were created** with appropriate model tiers: Opus for complex creative/architectural work, Sonnet for daily development tasks, Haiku for fast research
 5. **Voice styles were built** as a modular system with a creator skill for extensibility
-6. **The active/available split** keeps context lean — only 35% of the skill description budget is used, leaving room for growth
+6. **The active/available split** keeps context lean — only 36% of the skill description budget is used, leaving room for growth
 7. **Cross-platform environment guide** prevents common Claude Code mistakes (like `--break-system-packages` on Ubuntu)
 8. **Every skill was audited and optimized** — sonnet agents scored each skill on description quality, process clarity, and architecture completeness (all 6 components). Skills below 8/10 were fixed and re-scored until all passed. Final average: 8.7/10 across 18 skills.
 
@@ -246,7 +246,7 @@ The active toolkit is **1.3MB**. Every project created from it inherits the full
 
 <br>
 
-Yes. After reading 104 resources covering every aspect of Claude Code — from Anthropic's own documentation to production reports from teams running 1,000+ ML experiments per day — this toolkit implements every best practice, pattern, and optimization strategy discovered in the research. The CLAUDE.md is lean (166 lines, well under the 200-line threshold). The skill budget uses 35% of capacity. The reference library is comprehensive but loads on demand. The active/available split prevents context bloat while keeping everything accessible.
+Yes. After reading 104 resources covering every aspect of Claude Code — from Anthropic's own documentation to production reports from teams running 1,000+ ML experiments per day — this toolkit implements every best practice, pattern, and optimization strategy discovered in the research. The CLAUDE.md is lean (166 lines, well under the 200-line threshold). The skill budget uses 36% of capacity. The reference library is comprehensive but loads on demand. The active/available split prevents context bloat while keeping everything accessible.
 
 It's not perfect — nothing is. But it's built on the most thorough analysis of Claude Code's capabilities and limitations that exists in one place.
 
