@@ -133,6 +133,15 @@ Install with `/skill-store install <name>`, or auto-recommended when creating ne
 | `hf-finetune` | Fine-tune HuggingFace transformers with Trainer API, PEFT/LoRA, bitsandbytes quantization |
 | `unsloth-finetune` | Fast LLM fine-tuning with Unsloth: 2x+ speed, LoRA, dataset formatting, GGUF export |
 | `model-export` | Export models to GGUF/llama.cpp, ONNX, TorchScript, and quantized formats for deployment |
+| `training-infra` | Production training infrastructure: DDP, Accelerate, W&B/MLflow, checkpointing, reproducibility |
+
+**Android**
+| Skill | What it does |
+|---|---|
+| `android-setup` | Set up Android SDK, ADB, build tools, and emulator — supports Linux, macOS, WSL |
+| `android-ui` | Design minimal, accessible Android UI with Material Design 3 (Compose or XML) |
+| `android-backend` | MVVM backend logic with Room, Retrofit, Coroutines, and full test coverage |
+| `android-build` | Build, install, debug, self-sign, and release APKs from the command line — no IDE required |
 
 **Creative & Design**
 | Skill | What it does |
@@ -142,7 +151,6 @@ Install with `/skill-store install <name>`, or auto-recommended when creating ne
 | `slack-gif-creator` | Animated GIFs optimized for Slack with Python PIL utilities, easing functions, and frame helpers |
 | `theme-factory` | 10 curated professional font/color themes for styling artifacts, docs, and presentations |
 | `web-artifacts-builder` | React + Tailwind + shadcn/ui artifacts bundled into single self-contained HTML files |
-| `training-infra` | Production training infrastructure: DDP, Accelerate, W&B/MLflow, checkpointing, reproducibility |
 
 ---
 
@@ -195,6 +203,8 @@ Specialized AI personas that Claude delegates to automatically. Each runs in its
 | `pytorch-dev` | Sonnet | PyTorch implementation: nn.Module, custom layers, loss functions, debugging |
 | `hf-ml-engineer` | Sonnet | HuggingFace/LLM fine-tuning: transformers, PEFT, Unsloth, tokenizers |
 | `ml-trainer` | Sonnet | Training infrastructure: distributed training, memory optimization, profiling |
+| `android-dev` | Sonnet | Android development: Kotlin, Jetpack Compose, MVVM, Material Design 3, testing |
+| `android-architect` | Opus | Android app architecture: module design, navigation, data flow, dependency injection |
 
 ---
 
