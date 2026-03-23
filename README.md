@@ -89,7 +89,7 @@ Skills are reusable workflows that Claude loads automatically when relevant, or 
 #### Meta Skills
 | Skill | What it does |
 |---|---|
-| `/skill-creator` | Guided skill creation with proper structure and progressive disclosure |
+| `/skill-creator` | Full skill development lifecycle: guided creation, eval testing, benchmarking, and iterative improvement |
 | `/skill-store` | Browse, install, and uninstall skills and agents from the available library |
 | `/voice-style` | Switch interaction styles mid-session |
 | `/voice-creator` | Create custom voice styles from examples or descriptions |
