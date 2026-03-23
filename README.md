@@ -94,19 +94,53 @@ Skills are reusable workflows that Claude loads automatically when relevant, or 
 | `/voice-style` | Switch interaction styles mid-session |
 | `/voice-creator` | Create custom voice styles from examples or descriptions |
 
-#### 📚 Available Library
+#### 📚 Available Library (24 skills — install with `/skill-store`)
 
-Install with `/skill-store install <name>` — or auto-installed when creating new projects.
+Install with `/skill-store install <name>`, or auto-recommended when creating new projects. Run `/skill-store update` to check this repo for new additions.
 
-**Document Formats:** `docx` · `pdf` · `pptx` · `xlsx`
-**General:** `brainstorm` · `deploy-checklist` · `doc-coauthoring` · `project-optimizer` · `python-scaffold` · `seo-content` · `web-starter`
-**Creative:** `algorithmic-art` · `canvas-design` · `slack-gif-creator` · `theme-factory` · `web-artifacts-builder`
-**Developer:** `mcp-builder` · `webapp-testing`
-**ML/AI:** `pytorch-training-loop` · `torch-optimize` · `hf-finetune` · `unsloth-finetune` · `model-export` · `training-infra`
+**Document Formats**
+| Skill | What it does |
+|---|---|
+| `docx` | Create, read, edit Word documents with formatting, tables, tracked changes, headers/footers |
+| `pdf` | Read, create, merge, split, OCR, encrypt PDFs with Python (pypdf, reportlab, pdfplumber) |
+| `pptx` | Create and edit PowerPoint presentations with themes, design guidelines, and QA workflow |
+| `xlsx` | Create, read, edit Excel spreadsheets with formulas, formatting, charts (pandas + openpyxl) |
 
-**`/project-optimizer`** does a deep read-only scan of your entire project — code, tests, CI/CD, documentation, Claude Code setup — and produces a prioritized report of improvements. Auto-installed in every new project.
+**General**
+| Skill | What it does |
+|---|---|
+| `brainstorm` | Structured ideation using divergent/convergent frameworks (bisociation, SCAMPER, role-storming) |
+| `deploy-checklist` | Pre-deployment verification: code quality, security, performance, database, documentation |
+| `doc-coauthoring` | Collaborative documentation writing with structured workflow and reader testing via subagents |
+| `project-optimizer` | Deep read-only scan of your project with prioritized improvement report (auto-installed in new projects) |
+| `python-scaffold` | Scaffold Python projects with modern tooling (FastAPI, pytest, ruff, pyproject.toml) |
+| `seo-content` | SEO-optimized content creation with keyword intent analysis, meta elements, AI search optimization |
+| `web-starter` | Scaffold web projects (React/Next.js/Vue/Svelte/vanilla) with accessibility and performance defaults |
 
-🔄 **Check for new skills anytime:** `/skill-store update` pulls the latest from this GitHub repo. Additive only — never touches your existing files.
+**Creative & Design**
+| Skill | What it does |
+|---|---|
+| `algorithmic-art` | Generative art with p5.js: seeded randomness, particle systems, flow fields, interactive parameters |
+| `canvas-design` | Museum-quality visual art as PDF/PNG with design philosophies and professional typography |
+| `slack-gif-creator` | Animated GIFs optimized for Slack with Python PIL utilities, easing functions, and frame helpers |
+| `theme-factory` | 10 curated professional font/color themes for styling artifacts, docs, and presentations |
+| `web-artifacts-builder` | React + Tailwind + shadcn/ui artifacts bundled into single self-contained HTML files |
+
+**Developer Tools**
+| Skill | What it does |
+|---|---|
+| `mcp-builder` | Build high-quality MCP servers: deep research, implementation, testing, and evaluation |
+| `webapp-testing` | Test web applications with Playwright: screenshots, interaction, console logs, server management |
+
+**ML / AI**
+| Skill | What it does |
+|---|---|
+| `pytorch-training-loop` | Complete PyTorch training loop: DataLoader, optimizer, scheduler, mixed precision, checkpointing |
+| `torch-optimize` | Profile and fix slow/OOM PyTorch: mixed precision, torch.compile, gradient checkpointing |
+| `hf-finetune` | Fine-tune HuggingFace transformers with Trainer API, PEFT/LoRA, bitsandbytes quantization |
+| `unsloth-finetune` | Fast LLM fine-tuning with Unsloth: 2x+ speed, LoRA, dataset formatting, GGUF export |
+| `model-export` | Export models to GGUF/llama.cpp, ONNX, TorchScript, and quantized formats for deployment |
+| `training-infra` | Production training infrastructure: DDP, Accelerate, W&B/MLflow, checkpointing, reproducibility |
 
 ---
 
