@@ -322,7 +322,7 @@ Keep going until:
 - The feedback is all empty (everything looks good)
 - You're not making meaningful progress
 
-**Auto-optimize option:** After the first eval iteration, offer: "Want me to auto-optimize this skill until it scores 8+ on all criteria? I'll run a sonnet agent that iterates on the skill — evaluating, fixing weaknesses, and re-evaluating — until description quality, process clarity, and architecture completeness all score 8+. You'll review the final result before it's saved." If the user agrees, spawn a background sonnet agent that loops: evaluate → identify lowest-scoring criterion → apply targeted fix → re-evaluate → repeat until all scores ≥ 8 or 5 iterations reached.
+**Auto-optimize option:** After the first eval iteration, offer: "Want me to auto-optimize this skill until it scores 8+ on all criteria? I'll run a sonnet agent that iterates on the skill — evaluating, fixing weaknesses, and re-evaluating — until description quality, process clarity, and architecture completeness all score 8+. You'll review the final result before it's saved." If the user agrees, spawn a background sonnet agent that loops: evaluate → identify lowest-scoring criterion → apply targeted fix → **re-read the updated file and re-score from scratch** → repeat until all scores ≥ 8 or 5 iterations reached. **CRITICAL: Never estimate or assume post-fix scores. After every fix, the agent MUST re-read the actual file and score it fresh against the architecture reference. The score must reflect what's actually in the file, not what was intended to be fixed.**
 
 ---
 

@@ -226,6 +226,7 @@ This project was built by Claude Code (Opus 4.6) in a single session using a Lev
 5. **Voice styles were built** as a modular system with a creator skill for extensibility
 6. **The active/available split** keeps context lean — only 35% of the skill description budget is used, leaving room for growth
 7. **Cross-platform environment guide** prevents common Claude Code mistakes (like `--break-system-packages` on Ubuntu)
+8. **Every skill was audited and optimized** — sonnet agents scored each skill on description quality, process clarity, and architecture completeness (all 6 components). Skills below 8/10 were fixed and re-scored until all passed. Final average: 8.7/10 across 18 skills.
 
 The active toolkit is **1.3MB**. Every project created from it inherits the full knowledge base at zero context cost.
 
