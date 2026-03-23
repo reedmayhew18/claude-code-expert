@@ -51,3 +51,10 @@ Skills ready to install into any project. Use `/skill-store` to browse and insta
 | `unsloth-finetune` | Fast LLM fine-tuning with Unsloth: 2x+ speed, LoRA, dataset formatting, GGUF export |
 | `model-export` | Export models to GGUF/llama.cpp, ONNX, TorchScript, and quantized formats for deployment |
 | `training-infra` | Production training infrastructure: DDP, Accelerate, W&B/MLflow, checkpointing, reproducibility |
+
+## Agentic OS
+
+| Skill | Description |
+|-------|-------------|
+| `shared-context` | Guided setup of shared context folder: brand voice, audience personas, domain knowledge, content pillars |
+| `hooks-setup` | Interactive configuration of Claude Code hooks: auto-format, safety guards, compaction recovery, session management |

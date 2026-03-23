@@ -7,14 +7,14 @@
 [![Built with Claude Code](https://img.shields.io/badge/Built%20with-Claude%20Code-blueviolet?style=for-the-badge&logo=anthropic)](https://claude.ai/code)
 [![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue?style=for-the-badge)](LICENSE)
 
-[![Skills](https://img.shields.io/badge/Skills-19%20active%20·%2024%20available-0078D4?style=flat-square)](https://github.com/reedmayhew18/claude-code-expert/tree/main/.claude/skills)
-[![Agents](https://img.shields.io/badge/Agents-16%20specialized-E86C00?style=flat-square)](https://github.com/reedmayhew18/claude-code-expert/tree/main/.claude/agents)
+[![Skills](https://img.shields.io/badge/Skills-21%20active%20·%2026%20available-0078D4?style=flat-square)](https://github.com/reedmayhew18/claude-code-expert/tree/main/.claude/skills)
+[![Agents](https://img.shields.io/badge/Agents-17%20specialized-E86C00?style=flat-square)](https://github.com/reedmayhew18/claude-code-expert/tree/main/.claude/agents)
 [![Voice Styles](https://img.shields.io/badge/Voice%20Styles-9%20built--in-ff69b4?style=flat-square)](#-voice-styles-9-built-in)
-[![Reference](https://img.shields.io/badge/Reference%20Guides-8%20·%207%2C752%20lines-2ea44f?style=flat-square)](https://github.com/reedmayhew18/claude-code-expert/tree/main/reference)
+[![Reference](https://img.shields.io/badge/Reference%20Guides-9%20·%207%2C752%20lines-2ea44f?style=flat-square)](https://github.com/reedmayhew18/claude-code-expert/tree/main/reference)
 [![Sources](https://img.shields.io/badge/Sources%20Analyzed-104-FFD700?style=flat-square)](#-how-it-was-built)
 [![Size](https://img.shields.io/badge/Active%20Size-1.3MB-lightgrey?style=flat-square)](#)
 
-**43 skills · 16 agents · 9 voice styles · 8 reference guides**
+**47 skills · 17 agents · 9 voice styles · 9 reference guides**
 **Built by Claude Code after analyzing 104 resources**
 
 Drop it into any project. Start a new one from scratch. Or just clone it and ask questions.<br>
@@ -61,7 +61,7 @@ That's it. `/new-project` interviews you about what you're building, then create
 
 ## 📦 What's Inside
 
-### 🛠️ Skills (19 active + 24 available)
+### 🛠️ Skills (21 active + 26 available)
 
 Skills are reusable workflows that Claude loads automatically when relevant, or that you trigger with `/skill-name`.
 
@@ -85,6 +85,8 @@ Skills are reusable workflows that Claude loads automatically when relevant, or 
 | `/grill-me` | Deep interview that walks every branch of the design tree. Use `lightly` for a quick 5-8 question version. Pre-fills from existing codebase |
 | `/research` | Structured web research with source evaluation and synthesis |
 | `/git-workflow` | Structured commits, branches, and PRs with safety checks |
+| `/workflow` | Define and run multi-step pipelines that chain skills and agents with state tracking and checkpoints |
+| `/wrap-up` | End-of-session retrospective: captures learnings, decisions, and progress to project memory |
 
 #### Meta Skills
 | Skill | What it does |
@@ -164,7 +166,7 @@ Want your own? `/voice-creator` builds a custom style from text examples, descri
 
 ---
 
-### 🤖 Agents (5 active + 11 available)
+### 🤖 Agents (6 active + 11 available)
 
 Specialized AI personas that Claude delegates to automatically. Each runs in its own context window.
 
@@ -176,6 +178,7 @@ Specialized AI personas that Claude delegates to automatically. Each runs in its
 | `researcher` | Haiku | Fast codebase exploration and context gathering |
 | `python-expert` | Sonnet | Python development with modern conventions |
 | `skill-architect` | Opus | Expert on building and optimizing Claude Code skills |
+| `orchestrator` | Sonnet | Coordinates multi-step workflows and delegates to specialist agents |
 
 #### Available Library
 `brainstormer` · `brand-voice-expert` · `creative-writer` (Opus) · `fullstack-dev` · `product-designer` (Opus) · `seo-expert` · `web-designer` (Opus) · `neural-architect` (Opus) · `pytorch-dev` · `hf-ml-engineer` · `ml-trainer`
@@ -198,6 +201,7 @@ Comprehensive guides synthesized from 104 sources. Claude reads on demand — ze
 | `06-guides-and-tutorials.md` | Learning progression from first session to Level 7 autonomous pipelines |
 | `07-brand-and-content-skills.md` | Content automation, brand voice architecture, shared context patterns |
 | `08-cross-platform-environments.md` | macOS, Windows, WSL, Linux: shell differences, Python venv, package managers, gotchas |
+| `09-agentic-os.md` | Native workflow orchestration: shared context, learning loops, self-maintenance, pipeline chaining |
 
 Every project created with `/new-project` or `/existing-project` gets these automatically.
 
@@ -220,7 +224,7 @@ This project was built by Claude Code (Opus 4.6) in a single session using a Lev
 3. **Skills were designed** based on patterns extracted from the research: the wizard methodology, the grill-me pattern, spec-driven planning, progressive disclosure, context management strategies
 4. **Agents were created** with appropriate model tiers: Opus for complex creative/architectural work, Sonnet for daily development tasks, Haiku for fast research
 5. **Voice styles were built** as a modular system with a creator skill for extensibility
-6. **The active/available split** keeps context lean — only 31% of the skill description budget is used, leaving room for growth
+6. **The active/available split** keeps context lean — only 35% of the skill description budget is used, leaving room for growth
 7. **Cross-platform environment guide** prevents common Claude Code mistakes (like `--break-system-packages` on Ubuntu)
 
 The active toolkit is **1.3MB**. Every project created from it inherits the full knowledge base at zero context cost.
@@ -230,7 +234,7 @@ The active toolkit is **1.3MB**. Every project created from it inherits the full
 
 <br>
 
-Yes. After reading 104 resources covering every aspect of Claude Code — from Anthropic's own documentation to production reports from teams running 1,000+ ML experiments per day — this toolkit implements every best practice, pattern, and optimization strategy discovered in the research. The CLAUDE.md is lean (166 lines, well under the 200-line threshold). The skill budget uses 31% of capacity. The reference library is comprehensive but loads on demand. The active/available split prevents context bloat while keeping everything accessible.
+Yes. After reading 104 resources covering every aspect of Claude Code — from Anthropic's own documentation to production reports from teams running 1,000+ ML experiments per day — this toolkit implements every best practice, pattern, and optimization strategy discovered in the research. The CLAUDE.md is lean (166 lines, well under the 200-line threshold). The skill budget uses 35% of capacity. The reference library is comprehensive but loads on demand. The active/available split prevents context bloat while keeping everything accessible.
 
 It's not perfect — nothing is. But it's built on the most thorough analysis of Claude Code's capabilities and limitations that exists in one place.
 
@@ -244,13 +248,13 @@ It's not perfect — nothing is. But it's built on the most thorough analysis of
 claude-code-expert/
 ├── CLAUDE.md                     # Project brain (166 lines, optimized)
 ├── README.md                     # You are here
-├── reference/                    # 8 expert guides (7,752 lines)
+├── reference/                    # 9 expert guides (7,752 lines)
 ├── .claude/
-│   ├── skills/                   # 19 active skills
+│   ├── skills/                   # 21 active skills
 │   │   └── voice-style/styles/   # 9 voice templates
-│   ├── agents/                   # 5 active agents
+│   ├── agents/                   # 6 active agents
 │   └── memory/                   # Project-local memory
-├── available-skills/             # 24 installable skills
+├── available-skills/             # 26 installable skills
 └── available-agents/             # 11 installable agents
 ```
 

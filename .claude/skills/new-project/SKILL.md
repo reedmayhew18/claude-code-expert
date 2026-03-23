@@ -58,9 +58,12 @@ Based on the interview, assemble the package:
 - `context-doctor/` - Context window troubleshooting
 - `research/` - Web research with source evaluation
 - `voice-style/` - Interaction style switching (with all style templates)
+- `workflow/` - Multi-step pipeline orchestration with state tracking
+- `wrap-up/` - End-of-session learning capture
 - `project-optimizer/` - Deep project scan and optimization (from `available-skills/`)
 
 **Always included agents:**
+- `orchestrator.md` - Workflow coordination (sonnet)
 - `code-reviewer.md` - Code review (sonnet)
 - `debugger.md` - Root cause analysis (sonnet)
 - `researcher.md` - Codebase exploration (haiku)
