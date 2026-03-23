@@ -12,7 +12,7 @@
 [![Voice Styles](https://img.shields.io/badge/Voice%20Styles-9%20built--in-ff69b4?style=flat-square)](#-voice-styles-9-built-in)
 [![Reference](https://img.shields.io/badge/Reference%20Guides-8%20·%207%2C752%20lines-2ea44f?style=flat-square)](https://github.com/reedmayhew18/claude-code-expert/tree/main/reference)
 [![Sources](https://img.shields.io/badge/Sources%20Analyzed-104-FFD700?style=flat-square)](#-how-it-was-built)
-[![Size](https://img.shields.io/badge/Total%20Size-692KB-lightgrey?style=flat-square)](#)
+[![Size](https://img.shields.io/badge/Active%20Size-1.3MB-lightgrey?style=flat-square)](#)
 
 **43 skills · 16 agents · 9 voice styles · 8 reference guides**
 **Built by Claude Code after analyzing 104 resources**
@@ -182,15 +182,14 @@ Too many people install dozens of third-party MCP servers based on YouTube recom
 This project was built by Claude Code (Opus 4.6) in a single session using a Level 7 autonomous pipeline:
 
 1. **104 reference files** were collected — official Anthropic documentation, community guides, Reddit discussions, production team reports, GitHub repositories, video tutorial transcripts, and blog posts
-2. **10 broken files** were identified and removed (Cloudflare blocks, Vercel security checkpoints, paywalled content)
-3. **6 parallel Sonnet agents** rewrote all 104 raw web scrapes into 7 clean, comprehensive reference guides — deduplicating content, stripping navigation cruft, merging overlapping sources, and organizing with proper structure
-4. **Skills were designed** based on patterns extracted from the research: the wizard methodology, the grill-me pattern, spec-driven planning, progressive disclosure, context management strategies
-5. **Agents were created** with appropriate model tiers: Opus for complex creative/architectural work, Sonnet for daily development tasks, Haiku for fast research
-6. **Voice styles were built** as a modular system with a creator skill for extensibility
-7. **The active/available split** keeps context lean — only 24% of the skill description budget is used, leaving room for growth
-8. **Cross-platform environment guide** prevents common Claude Code mistakes (like `--break-system-packages` on Ubuntu)
+2. **6 parallel Sonnet agents** rewrote all 104 raw web scrapes into 7 clean, comprehensive reference guides — deduplicating content, stripping navigation cruft, merging overlapping sources, and organizing with proper structure
+3. **Skills were designed** based on patterns extracted from the research: the wizard methodology, the grill-me pattern, spec-driven planning, progressive disclosure, context management strategies
+4. **Agents were created** with appropriate model tiers: Opus for complex creative/architectural work, Sonnet for daily development tasks, Haiku for fast research
+5. **Voice styles were built** as a modular system with a creator skill for extensibility
+6. **The active/available split** keeps context lean — only 24% of the skill description budget is used, leaving room for growth
+7. **Cross-platform environment guide** prevents common Claude Code mistakes (like `--break-system-packages` on Ubuntu)
 
-The entire toolkit is **692KB**. Every project created from it inherits the full knowledge base at zero context cost.
+The active toolkit is **1.3MB**. Every project created from it inherits the full knowledge base at zero context cost.
 
 <details>
 <summary><strong>Does Claude actually believe this is the best solution?</strong></summary>
