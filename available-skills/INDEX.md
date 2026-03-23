@@ -58,3 +58,12 @@ Skills ready to install into any project. Use `/skill-store` to browse and insta
 |-------|-------------|
 | `shared-context` | Guided setup of shared context folder: brand voice, audience personas, domain knowledge, content pillars |
 | `hooks-setup` | Interactive configuration of Claude Code hooks: auto-format, safety guards, compaction recovery, session management |
+
+## Android
+
+| Skill | Description |
+|-------|-------------|
+| `android-setup` | Set up Android SDK, ADB, build tools, and emulator — supports Linux, macOS, WSL |
+| `android-ui` | Design minimal, accessible Android UI with Material Design 3 (Compose or XML) |
+| `android-backend` | MVVM backend logic with Room, Retrofit, Coroutines, and full test coverage |
+| `android-build` | Build, install, debug, self-sign, and release APKs from the command line — no IDE required |

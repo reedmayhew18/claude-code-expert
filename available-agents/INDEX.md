@@ -15,3 +15,5 @@ Specialized agents ready to install into any project. Use `/skill-store` to brow
 | `pytorch-dev` | sonnet | PyTorch implementation: nn.Module, custom layers, loss functions, tensor ops, training debugging |
 | `hf-ml-engineer` | sonnet | HuggingFace/LLM fine-tuning: transformers, PEFT, Unsloth, tokenizers, model hub, inference |
 | `ml-trainer` | sonnet | Training infrastructure: distributed training, memory optimization, experiment tracking, profiling |
+| `android-dev` | sonnet | Android development: Kotlin, Jetpack Compose, MVVM, Material Design 3, testing |
+| `android-architect` | opus | Android app architecture: module design, navigation, data flow, dependency injection |
