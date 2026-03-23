@@ -117,15 +117,6 @@ Install with `/skill-store install <name>`, or auto-recommended when creating ne
 | `seo-content` | SEO-optimized content creation with keyword intent analysis, meta elements, AI search optimization |
 | `web-starter` | Scaffold web projects (React/Next.js/Vue/Svelte/vanilla) with accessibility and performance defaults |
 
-**Creative & Design**
-| Skill | What it does |
-|---|---|
-| `algorithmic-art` | Generative art with p5.js: seeded randomness, particle systems, flow fields, interactive parameters |
-| `canvas-design` | Museum-quality visual art as PDF/PNG with design philosophies and professional typography |
-| `slack-gif-creator` | Animated GIFs optimized for Slack with Python PIL utilities, easing functions, and frame helpers |
-| `theme-factory` | 10 curated professional font/color themes for styling artifacts, docs, and presentations |
-| `web-artifacts-builder` | React + Tailwind + shadcn/ui artifacts bundled into single self-contained HTML files |
-
 **Developer Tools**
 | Skill | What it does |
 |---|---|
@@ -140,6 +131,15 @@ Install with `/skill-store install <name>`, or auto-recommended when creating ne
 | `hf-finetune` | Fine-tune HuggingFace transformers with Trainer API, PEFT/LoRA, bitsandbytes quantization |
 | `unsloth-finetune` | Fast LLM fine-tuning with Unsloth: 2x+ speed, LoRA, dataset formatting, GGUF export |
 | `model-export` | Export models to GGUF/llama.cpp, ONNX, TorchScript, and quantized formats for deployment |
+
+**Creative & Design**
+| Skill | What it does |
+|---|---|
+| `algorithmic-art` | Generative art with p5.js: seeded randomness, particle systems, flow fields, interactive parameters |
+| `canvas-design` | Museum-quality visual art as PDF/PNG with design philosophies and professional typography |
+| `slack-gif-creator` | Animated GIFs optimized for Slack with Python PIL utilities, easing functions, and frame helpers |
+| `theme-factory` | 10 curated professional font/color themes for styling artifacts, docs, and presentations |
+| `web-artifacts-builder` | React + Tailwind + shadcn/ui artifacts bundled into single self-contained HTML files |
 | `training-infra` | Production training infrastructure: DDP, Accelerate, W&B/MLflow, checkpointing, reproducibility |
 
 ---
