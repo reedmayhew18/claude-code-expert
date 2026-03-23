@@ -11,10 +11,20 @@ allowed-tools: Bash
 Safe, structured git operations with user checkpoints before irreversible actions.
 
 ## Goal
-Ensure git operations are safe, conventional, and reviewable. Done = clean commit with proper message, correctly named branch, or PR opened with passing checks and the URL returned.
+Ensure git operations are safe, conventional, and reviewable.
+- **Commit done:** user-approved commit exists with conventional message and hash returned
+- **Branch done:** correctly named branch created and checked out, confirmed to user
+- **PR done:** branch pushed, PR created via `gh`, PR URL returned to user
+
+## Dependencies
+**Tools:** Bash (all git operations, `gh` CLI for PRs)
+**CLI required:** `git` (always available), `gh` (GitHub CLI — required for PR command only; warn user if not installed)
+**No MCP or external API required**
 
 ## Context
-Read CLAUDE.md for branch naming conventions if documented. Check for `.github/pull_request_template.md` before drafting PR body.
+- Read `CLAUDE.md` for project-specific branch naming conventions before creating a branch
+- Check `.github/pull_request_template.md` before drafting a PR body; use it as the template if present
+- Check `.github/CODEOWNERS` or CI config if relevant for reviewer assignment
 
 ## Commands
 
@@ -32,12 +42,14 @@ Read CLAUDE.md for branch naming conventions if documented. Check for `.github/p
 5. Create the commit
 
 ### Branch: `/git-workflow branch [name]`
-1. Ensure clean working tree (warn if uncommitted changes)
-2. Fetch latest from remote
-3. Create branch from main/master with conventional name:
-   - `feat/description`, `fix/description`, `refactor/description`
-4. Switch to new branch
-5. Confirm: "Created and switched to `branch-name`"
+1. Run `git status` — warn if uncommitted changes exist; ask user to commit or stash before proceeding
+2. Fetch latest from remote (`git fetch`)
+3. Derive branch name: use provided name or propose one from context using convention `feat/description`, `fix/description`, `refactor/description`
+
+**CHECKPOINT:** Show proposed branch name and source branch (e.g., `main`). Do NOT create the branch until user approves.
+
+4. Create branch from main/master and switch to it
+5. Output: "Created and switched to `branch-name` from `main`."
 
 ### PR: `/git-workflow pr`
 1. Run `git status` — warn if uncommitted changes

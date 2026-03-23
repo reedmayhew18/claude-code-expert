@@ -24,6 +24,15 @@ Maintain external state files that survive context resets, compaction, and sessi
 ## Commands
 
 ### Save: `/progress-tracker save`
+1. Read existing `PROGRESS.md` if it exists (preserve completed items — do not overwrite)
+2. Scan conversation history and any open files to reconstruct: what's done, what's in progress, decisions made, known issues, next steps
+3. Draft the full PROGRESS.md content using the template below
+
+**CHECKPOINT:** Present the drafted PROGRESS.md to the user. Ask: "Does this capture everything accurately? Should I add, remove, or correct anything before saving?" Do NOT write the file until the user approves.
+
+4. Write the approved content to `PROGRESS.md` in the project root
+5. Output: "Saved to PROGRESS.md — [N] completed items, [N] next steps."
+
 Create or update PROGRESS.md with:
 
 ```markdown
@@ -63,7 +72,14 @@ Read PROGRESS.md and any files listed under "In Progress". Summarize the current
 **CHECKPOINT:** Present the loaded state summary. Ask: "Here's where we left off — does this match your expectations, or has anything changed?" Do NOT resume work until the user confirms.
 
 ### Update: `/progress-tracker update`
-Update the existing PROGRESS.md with current state without starting fresh.
+1. Read existing `PROGRESS.md` — if not found, fall back to `save` flow
+2. Identify what has changed since the last save: newly completed items, new decisions, new blockers, revised next steps
+3. Draft the updated PROGRESS.md (move completed items to Completed, update In Progress, prepend new next steps)
+
+**CHECKPOINT:** Show a diff-style summary of what changed (e.g., "Marking X complete, adding Y to Next Steps"). Ask: "Looks right?" Do NOT write until confirmed.
+
+4. Write the updated file
+5. Output: "PROGRESS.md updated."
 
 ## When to Use
 - Before `/clear` - save state first
