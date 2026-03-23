@@ -55,6 +55,46 @@ Restore a customized skill or agent back to its original version.
 ### `/skill-catalog restore all`
 Scan all skills and agents for descriptions ending in `(Customized)`. List them and offer to restore each one individually or all at once.
 
+### `/skill-catalog customize <name>`
+Customize a specific skill or agent for the current project.
+
+1. Read the skill's SKILL.md or agent's .md file
+2. Read the project's CLAUDE.md, package.json/pyproject.toml, and README to understand the tech stack and conventions
+3. Rewrite the skill's description and instructions to reference the project's specific:
+   - Test runner and test commands
+   - Build system and commands
+   - Linter/formatter
+   - Framework conventions
+   - Branch naming and PR conventions
+4. Add project-specific examples where applicable
+5. Append ` (Customized)` to the `description:` field if not already present
+6. Show the user the changes before saving
+7. Save on confirmation
+
+### `/skill-catalog customize`
+No name specified — interactive mode:
+
+1. List ALL installed skills and agents with numbers:
+   ```
+   Installed Skills:
+     1. wizard - 8-phase production implementation
+     2. tdd - Strict red-green-refactor TDD
+     3. code-review - Isolated code review (Customized)
+     ...
+
+   Installed Agents:
+     14. code-reviewer - Reviews changes by severity
+     15. debugger - Root cause analysis
+     ...
+   ```
+2. Skills already marked `(Customized)` show that tag so the user knows
+3. Ask: "Enter the numbers of skills/agents to customize (e.g. `1, 2, 5` or `all`):"
+4. For each selected, run the customize process above
+5. Read the project context ONCE at the start, then apply to all selected — don't re-read for each
+
+### `/skill-catalog customize all`
+Customize every installed skill and agent for the current project. Same as selecting all numbers above.
+
 ### `/skill-catalog update`
 Check GitHub for new or updated skills and agents.
 
