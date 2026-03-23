@@ -64,7 +64,7 @@ Copy essential skills to `<target>/.claude/skills/`:
 - wizard, plan-and-spec, tdd, code-review, refactor
 - grill-me, git-workflow, progress-tracker, context-doctor
 - research, voice-style (with all style templates), voice-creator
-- workflow, wrap-up (Agentic OS: pipeline chaining and learning capture)
+- workflow, wrap-up (AGI Flow: pipeline chaining and learning capture)
 - project-optimizer (from `available-skills/` — deep scan and optimization tool)
 
 **Install if requested:**

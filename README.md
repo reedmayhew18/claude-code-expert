@@ -201,7 +201,7 @@ Comprehensive guides synthesized from 104 sources. Claude reads on demand — ze
 | `06-guides-and-tutorials.md` | Learning progression from first session to Level 7 autonomous pipelines |
 | `07-brand-and-content-skills.md` | Content automation, brand voice architecture, shared context patterns |
 | `08-cross-platform-environments.md` | macOS, Windows, WSL, Linux: shell differences, Python venv, package managers, gotchas |
-| `09-agentic-os.md` | Native workflow orchestration: shared context, learning loops, self-maintenance, pipeline chaining |
+| `09-agi-flow.md` | Native workflow orchestration: shared context, learning loops, self-maintenance, pipeline chaining |
 
 Every project created with `/new-project` or `/existing-project` gets these automatically.
 

@@ -1,4 +1,4 @@
-# The Agentic OS: Native Workflow Orchestration in Claude Code
+# The AGI Flow: Native Workflow Orchestration in Claude Code
 
 How to connect isolated skills into a coherent system with shared context, a learning loop, self-maintenance, and workflow chaining — using only native Claude Code capabilities.
 
@@ -6,7 +6,7 @@ How to connect isolated skills into a coherent system with shared context, a lea
 
 ## Table of Contents
 
-1. [What Is the Agentic OS?](#1-what-is-the-agentic-os)
+1. [What Is the AGI Flow?](#1-what-is-agi-flow)
 2. [The Five Layers](#2-the-five-layers)
 3. [Minimal Setup (5 Minutes)](#3-minimal-setup)
 4. [Full Implementation Guide](#4-full-implementation-guide)
@@ -17,11 +17,11 @@ How to connect isolated skills into a coherent system with shared context, a lea
 
 ---
 
-## 1. What Is the Agentic OS?
+## 1. What Is the AGI Flow?
 
 An operating system doesn't do your work — it manages what does. It allocates resources, schedules processes, and gives running programs access to shared state.
 
-An Agentic OS does the same thing for AI skills and agents:
+An AGI Flow does the same thing for AI skills and agents:
 
 - **Routes tasks** to the right skill or agent
 - **Manages shared context** (brand voice, project conventions, domain knowledge)
@@ -29,9 +29,9 @@ An Agentic OS does the same thing for AI skills and agents:
 - **Captures feedback** and uses it to improve future sessions
 - **Maintains itself** through hooks, health checks, and recovery patterns
 
-This is different from a static automation chain. A Zapier workflow follows a fixed path. An Agentic OS reasons about what to do next based on intermediate results. It handles ambiguity, branches on content, and adapts when things go wrong.
+This is different from a static automation chain. A Zapier workflow follows a fixed path. An AGI Flow reasons about what to do next based on intermediate results. It handles ambiguity, branches on content, and adapts when things go wrong.
 
-The core insight for Claude Code: **state lives in files, not conversation**. Every layer of the Agentic OS persists through markdown files in predictable locations. This means the system survives context compaction, session restarts, and even complete context resets.
+The core insight for Claude Code: **state lives in files, not conversation**. Every layer of the AGI Flow persists through markdown files in predictable locations. This means the system survives context compaction, session restarts, and even complete context resets.
 
 ---
 
@@ -98,7 +98,7 @@ The core insight for Claude Code: **state lives in files, not conversation**. Ev
 
 ## 3. Minimal Setup (5 Minutes)
 
-The smallest useful Agentic OS has three parts:
+The smallest useful AGI Flow has three parts:
 
 ### Step 1: Create a conventions file (2 min)
 ```bash
@@ -292,7 +292,7 @@ If context resets mid-workflow: `/workflow resume feature-pipeline` reads the st
 
 ## 8. How Existing Skills Fit the Pattern
 
-| Existing Skill | Agentic OS Role |
+| Existing Skill | AGI Flow Role |
 |---|---|
 | `/wizard` | Workflow orchestration (8-phase pipeline with built-in verification) |
 | `/plan-and-spec` | Workflow orchestration (planning pipeline with forced iteration) |
@@ -305,4 +305,4 @@ If context resets mid-workflow: `/workflow resume feature-pipeline` reads the st
 | `/project-optimizer` | Self-maintenance (full project health audit) |
 | `orchestrator` agent | Workflow orchestration (multi-agent coordination) |
 
-The Agentic OS isn't a separate system bolted on top. It's the recognition that these skills already form a coherent architecture — they just needed explicit connection points (workflow chaining, learning capture, hook configuration) to function as a unified whole.
+The AGI Flow isn't a separate system bolted on top. It's the recognition that these skills already form a coherent architecture — they just needed explicit connection points (workflow chaining, learning capture, hook configuration) to function as a unified whole.

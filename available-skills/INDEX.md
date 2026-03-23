@@ -52,7 +52,7 @@ Skills ready to install into any project. Use `/skill-store` to browse and insta
 | `model-export` | Export models to GGUF/llama.cpp, ONNX, TorchScript, and quantized formats for deployment |
 | `training-infra` | Production training infrastructure: DDP, Accelerate, W&B/MLflow, checkpointing, reproducibility |
 
-## Agentic OS
+## AGI Flow
 
 | Skill | Description |
 |-------|-------------|
