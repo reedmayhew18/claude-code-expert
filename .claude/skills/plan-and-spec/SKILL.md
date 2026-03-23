@@ -2,9 +2,24 @@
 name: plan-and-spec
 description: Create a structured implementation plan with spec-driven modeling. Use when starting a new feature, complex refactor, or when the user says "plan this", "spec this out", "design this", or "how should we build this". Forces multiple design iterations before coding.
 argument-hint: "[feature or task description]"
+disable-model-invocation: true
+allowed-tools: Read, Grep, Glob, Write
 ---
 
 # Spec-Driven Planning
+
+## Goal
+Produce a written implementation plan (PLAN.md or TECHSPEC.md) that is specific enough for any developer to execute without additional context — including after a session reset or compaction event. Success = a file exists with concrete steps, file paths, success criteria, and documented risks.
+
+## Dependencies
+**Tools:** Read, Grep, Glob (discovery), Write (save plan file)
+**Context needed:** CLAUDE.md (project conventions), existing code files, any prior PLAN.md or TECHSPEC.md
+
+## Context
+Before planning, read:
+- `CLAUDE.md` for project conventions, stack, and constraints
+- Relevant existing source files at the paths involved
+- Any prior plan files to avoid re-solving solved problems
 
 Create a thorough implementation plan that survives context compaction and prevents the "first idea that works" trap.
 
@@ -20,7 +35,7 @@ Create a thorough implementation plan that survives context compaction and preve
    - Success criteria (what does "done" look like?)
    - Non-functional requirements (performance, security, etc.)
 
-Do NOT proceed until assumptions are validated.
+**CHECKPOINT:** Present your assumptions and questions to the user. Do NOT proceed until they respond and validate your understanding.
 
 ### Phase 2: Initial Design
 Draft a plan covering:
@@ -49,7 +64,16 @@ Address the specific weaknesses from Phase 3:
 Repeat Phases 3-4 at least twice more. Present the best elements from all iterations.
 
 ### Phase 6: Final Plan
-Cherry-pick the best elements into a final plan. Write it to a file (PLAN.md or TECHSPEC.md) so it survives context compaction.
+Cherry-pick the best elements into a final plan. Present the plan to the user before saving.
+
+**CHECKPOINT:** Ask: "Here's the final plan. Should I save this to PLAN.md, or would you like any changes first?" Do NOT write the file until the user approves.
+
+Write the approved plan to PLAN.md (or TECHSPEC.md if the user prefers) in the project root.
+
+## Output
+- **File:** `PLAN.md` or `TECHSPEC.md` in the project root
+- **Format:** Markdown using the Plan File Format below
+- **Presented to user** before saving for final approval
 
 ## Plan File Format
 

@@ -10,6 +10,23 @@ allowed-tools: Read, Write, Bash, Grep, Glob, WebFetch
 
 Browse and manage the available skills and agents library. Check GitHub for new additions.
 
+## Goal
+
+Give the user full visibility and control over their skill/agent library — install, remove, update, or customize capabilities. Success = user ends up with exactly the skills/agents they want, correctly placed, without accidental deletions or overwrites.
+
+## Dependencies
+
+**Tools:** Read, Write, Bash, Grep, Glob, WebFetch (all declared in frontmatter)
+**CLI tools:** None required
+**Connectors:** GitHub (`https://raw.githubusercontent.com/reedmayhew18/claude-code-expert/main/`) for `update`, `restore`, and install-from-remote flows — requires internet access
+
+## Context
+
+- Skills live in `.claude/skills/<name>/SKILL.md`; agents live in `.claude/agents/<name>.md`
+- Available (not-yet-installed) libraries are at project root: `available-skills/` and `available-agents/`
+- Core skills must never be uninstalled (list enforced in the uninstall command below)
+- Customized skills/agents have `(Customized)` appended to their `description:` field
+
 ## Commands
 
 ### `/skill-store list`
@@ -34,9 +51,12 @@ To install into a DIFFERENT project:
 
 ### `/skill-store uninstall <name>`
 1. Check if `<name>` is in active `.claude/skills/` or `.claude/agents/`
-2. Confirm with user before removing
+2. Do NOT uninstall core skills (project-init, wizard, tdd, code-review, refactor, context-doctor, skill-creator, grill-me, git-workflow, plan-and-spec, progress-tracker, voice-style, voice-creator, skill-store, research, existing-project, new-project)
+
+**CHECKPOINT:** Ask: "Are you sure you want to uninstall `<name>`? It will be moved back to the available library." Do NOT remove the file until the user confirms.
+
 3. Move back to `available-skills/` or `available-agents/`
-4. Do NOT uninstall core skills (project-init, wizard, tdd, code-review, refactor, context-doctor, skill-creator, grill-me, git-workflow, plan-and-spec, progress-tracker, voice-style, voice-creator, skill-store, research, existing-project, new-project)
+4. Confirm removal to the user
 
 ### `/skill-store restore <name>`
 Restore a customized skill or agent back to its original version.
@@ -49,6 +69,9 @@ Restore a customized skill or agent back to its original version.
    - Agents: `WebFetch https://raw.githubusercontent.com/reedmayhew18/claude-code-expert/main/.claude/agents/<name>.md`
    - If not found there, try: `WebFetch https://raw.githubusercontent.com/reedmayhew18/claude-code-expert/main/available-agents/<name>.md`
 4. Show the user a diff between their customized version and the original
+
+**CHECKPOINT:** Present the diff and ask: "This will replace your customized version with the original. Proceed?" Do NOT overwrite until the user confirms.
+
 5. If they confirm, replace with the original
 6. If the fetch fails, report: "Couldn't reach GitHub to get the original. Check your connection."
 
@@ -68,8 +91,10 @@ Customize a specific skill or agent for the current project.
    - Branch naming and PR conventions
 4. Add project-specific examples where applicable
 5. Append ` (Customized)` to the `description:` field if not already present
-6. Show the user the changes before saving
-7. Save on confirmation
+
+**CHECKPOINT:** Show the user the proposed changes before writing. Ask: "Here are the customizations I'll apply. Save them?" Do NOT write until confirmed.
+
+6. Save on confirmation
 
 ### `/skill-store customize`
 No name specified — interactive mode:
@@ -166,3 +191,13 @@ New skills and agents are added to the GitHub repo regularly. Run `/skill-store 
 - Core skills cannot be uninstalled (they're the Claude Code expertise foundation)
 - Available libraries are at project root: `available-skills/` and `available-agents/`
 - GitHub updates are additive only — they never modify or remove your existing local files
+
+## Output
+
+- **list:** Inline display of installed and available skills/agents with one-line descriptions
+- **install:** File copied to `.claude/skills/<name>/` or `.claude/agents/<name>.md`; confirmation message shown
+- **uninstall:** File moved back to `available-skills/` or `available-agents/`; confirmation message shown
+- **restore:** Original file written back to active location after user diff-review and confirmation
+- **customize:** Updated SKILL.md or agent file with project-specific instructions and `(Customized)` tag
+- **update:** Summary of new/updated items found on GitHub; downloaded files placed in `available-skills/` or `available-agents/`
+- **setup:** Selected skills/agents installed; optional CLAUDE.md created via `/project-init`

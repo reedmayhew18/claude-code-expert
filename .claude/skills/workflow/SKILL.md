@@ -8,6 +8,16 @@ allowed-tools: Read, Write, Edit, Glob, Grep, Bash
 
 # Workflow — Multi-Step Pipeline Orchestration
 
+## Goal
+Define, persist, and execute multi-step pipelines that survive context compaction and session restarts. Success = workflow runs to completion with each step's output saved to a file, checkpoints honored, and a final log written.
+
+## Dependencies
+- Tools: Read, Write, Edit, Glob, Grep, Bash
+- No external services required; sub-skills and agents are invoked by name
+
+## Context
+Workflow definitions and state live in `.claude/workflows/`. Each run reads the definition file and an optional state file to enable resumption.
+
 Define, run, and resume multi-step workflows that chain skills and agents together.
 
 ## Commands

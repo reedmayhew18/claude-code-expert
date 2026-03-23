@@ -2,9 +2,21 @@
 name: wizard
 description: 8-phase implementation methodology with built-in verification at each stage. Use for implementing features, fixing complex bugs, or any task where quality matters. Use when the user says "wizard mode", "do this properly", "production quality", or "full workflow".
 argument-hint: "[task description or issue number]"
+allowed-tools: Read, Write, Edit, Bash, Grep, Glob
 ---
 
 # Wizard - 8-Phase Implementation
+
+## Goal
+Deliver a production-quality implementation with zero regressions. Success = all new tests pass, full test suite passes, linter clean, and user has reviewed and approved a complete diff summary.
+
+## Dependencies
+- Tools: Read, Write, Edit, Bash, Grep, Glob
+- Requires a test runner (language-appropriate: pytest, jest, go test, etc.)
+- Reads CLAUDE.md for project conventions at Phase 1
+
+## Context
+Reads CLAUDE.md and any linked specs or issues at Phase 1. References existing codebase patterns discovered during Phase 2 exploration.
 
 A production-tested methodology that prevents common AI coding failures.
 
@@ -60,6 +72,12 @@ Fix anything found before proceeding.
 - Run linter if configured
 - Review the complete diff
 - Present summary of all changes to user
+
+## Output
+- No dedicated output file. Deliverable is working code committed to the project.
+- Phase 8 produces a diff summary presented to the user for final approval before closing.
+- **CHECKPOINT (Phase 1):** Present the task plan to the user. Do NOT write code until they approve.
+- **CHECKPOINT (Phase 8):** Present the complete diff summary. Confirm user is satisfied before marking done.
 
 ## When to Skip Phases
 - Quick typo fix: Skip to Phase 4

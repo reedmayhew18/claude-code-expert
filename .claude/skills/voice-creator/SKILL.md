@@ -3,11 +3,24 @@ name: voice-creator
 description: Create a custom voice/interaction style template. Use when the user says "create a voice", "make a style", "new personality", "custom voice", "I want Claude to talk like", or provides examples of a writing style they want to replicate.
 argument-hint: "[style name or description]"
 disable-model-invocation: true
+allowed-tools: Read, Write, Glob
 ---
 
 # Voice Style Creator
 
-Create a custom voice/interaction style template from examples, descriptions, or text excerpts.
+## Goal
+
+Produce a saved voice style file at `.claude/skills/voice-style/styles/<name>.md` that captures a distinct personality with enough specificity (rules + examples) that Claude reliably adopts it when `/voice-style <name>` is invoked.
+
+## Dependencies
+
+- **Tools:** Read, Write, Glob
+- **Existing styles:** Check `.claude/skills/voice-style/styles/` to avoid naming collisions and to use as format reference
+
+## Context
+
+- Review one existing style file in `.claude/skills/voice-style/styles/` before writing to match the established format
+- No external APIs or MCP servers required
 
 ## Process
 
@@ -33,6 +46,8 @@ From the input, extract:
 - **Humor style**: None/dry/sarcastic/goofy/witty
 - **Signature moves**: Catchphrases, opening patterns, closing patterns
 - **What they NEVER do**: Equally important as what they do
+
+**CHECKPOINT:** Present the style analysis to the user before writing the template. Ask: "Here's what I've extracted from your input. Does this capture the voice correctly, or should I adjust any of these attributes before writing the template?"
 
 ### Step 3: Write the Template
 Create a style file following this structure:
@@ -61,6 +76,8 @@ Create a style file following this structure:
 "[Example response in this style]"
 ```
 
+**CHECKPOINT:** Show the completed template to the user before saving. Ask: "Here's the full voice template. Should I save this as-is, or would you like to tweak anything first?"
+
 ### Step 4: Save and Test
 1. Save to `.claude/skills/voice-style/styles/<name>.md`
 2. Demonstrate the style with a sample response
@@ -72,3 +89,9 @@ Create a style file following this structure:
 - **Include examples.** The model learns more from examples than rules.
 - **Include anti-examples.** What does this voice NEVER sound like?
 - **Test with technical content.** Make sure the style works for code explanations, not just conversation.
+
+## Output
+
+- **Save location:** `.claude/skills/voice-style/styles/<name>.md`
+- **Format:** Markdown with a Rules section (6-8 numbered rules) and an Examples section (3+ scenarios)
+- **Activation:** User can invoke with `/voice-style <name>` after saving

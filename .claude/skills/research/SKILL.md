@@ -9,6 +9,22 @@ allowed-tools: WebSearch, WebFetch, Read, Write, Grep, Glob
 
 Systematic web research that produces actionable, cited results - not link dumps.
 
+## Goal
+
+Produce a concise, sourced answer to the user's question that enables a decision or action. Success = direct answer + cited sources + no unanswered gaps. Failure = link dump, unverified claims, or outdated information.
+
+## Dependencies
+
+**Tools:** WebSearch, WebFetch, Read, Write (all declared in frontmatter)
+**CLI tools:** None required
+**Connectors:** Public web only — no MCP servers or APIs needed
+
+## Context
+
+- No brand voice or codebase conventions needed for general research
+- For code-specific research: scan the project's CLAUDE.md or package.json first to understand the tech stack and version constraints before searching
+- Reference files in `references/` are not required for this skill
+
 ## Process
 
 ### Step 1: Understand the Question
@@ -16,6 +32,8 @@ Before searching, clarify:
 - What specific information do we need?
 - What decisions will this inform?
 - What would a GOOD answer look like? (docs link? code example? comparison table?)
+
+**CHECKPOINT:** If the question is ambiguous or the scope is unclear, ask one clarifying question before searching. Do NOT proceed with guesses about intent.
 
 ### Step 2: Search Strategy
 Don't just search once. Use iterative, targeted queries:
@@ -63,12 +81,23 @@ Don't dump links. Produce:
 5. **Caveats** - what's uncertain, version-dependent, or controversial
 6. **Sources** - links to the actual pages consulted
 
+### Step 4 (continued): Present findings
+
+**CHECKPOINT:** Present the synthesized findings to the user before saving anything. Ask: "Here's what I found. Should I save this to a file, or is this sufficient?"
+
 ### Step 5: Save (if substantial)
 For significant research, write findings to a file:
 - `RESEARCH.md` for general research
 - `RESEARCH-[topic].md` for topic-specific deep dives
 
 This preserves research across context resets.
+
+## Output
+
+- **Primary deliverable:** Inline response with direct answer, key findings, source citations
+- **Format:** Markdown — direct answer paragraph, optional comparison table, code examples if relevant, sources list at bottom
+- **Save location:** `RESEARCH.md` or `RESEARCH-[topic].md` in the project root (only if the user confirms or the research is substantial enough to warrant persistence)
+- **Never save without user confirmation**
 
 ## WebFetch Tips
 - Fetch documentation pages directly for accurate information

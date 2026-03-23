@@ -3,9 +3,27 @@ name: new-project
 description: Create a fully configured new project with Claude Code best practices, skills, and agents. Use when the user says "new project", "start a project", "create a project", "set up a new", or "bootstrap a project".
 argument-hint: "[project name or description]"
 disable-model-invocation: true
+allowed-tools: Read, Write, Bash, Glob
 ---
 
 # New Project Creator
+
+## Goal
+
+Produce a fully functional, immediately usable project directory adjacent to this repo. Success = the user can `cd` into the new project and run `claude` with the right skills, agents, and CLAUDE.md already in place — zero manual setup required.
+
+## Dependencies
+
+- Tools: Read, Write, Bash, Glob
+- Bash operations: `mkdir`, `cp`, `git init` (standard shell utilities, no external installs required)
+- Skills consumed during execution: `grill-me` (optional, for deep setup mode)
+- Source assets: `.claude/skills/`, `.claude/agents/`, `available-skills/`, `available-agents/`, `reference/`
+
+## Context
+
+This skill operates on the parent directory of this repo (one level up). It reads available skills and agents from this repo's `.claude/` and `available-skills/`/`available-agents/` folders. The CLAUDE.md it produces is project-specific — not a copy of this repo's CLAUDE.md. Consult `reference/03-skills-and-agents.md` for skill/agent format if customizing.
+
+---
 
 Create a new project folder adjacent to this expertise repo, fully configured with Claude Code best practices, selected skills, agents, and a customized CLAUDE.md.
 
@@ -80,6 +98,9 @@ Based on the interview, assemble the package:
 | Any large project | deploy-checklist | (based on stack) |
 
 Present the recommended package and let the user add/remove before proceeding.
+
+**CHECKPOINT:** Show the user the full kit (skills + agents) before creating any files. Do NOT proceed to Phase 3 until they confirm.
+Ask: "Here's what I'll install. Add anything, remove anything, or should I go ahead?"
 
 ### Phase 3: Create the Project
 The new project folder is created **adjacent to this repo** (in the parent directory).
@@ -161,6 +182,9 @@ This project includes Claude Code reference guides in `reference/`. Consult them
 [NEVER/ALWAYS items, MCP warning, venv rule if applicable]
 ```
 
+**CHECKPOINT:** Show the user the generated CLAUDE.md before writing it to disk.
+Ask: "Here's the CLAUDE.md I'll write for your project. Want any changes before I save it?"
+
 ### Phase 5: Offer Customization
 Ask: "Would you like me to customize any of the skills for your specific project?"
 
@@ -186,6 +210,13 @@ Summarize what was created:
 - Next steps for the user
 
 Suggest: "cd into your new project and start with `/grill-me` to plan your first feature, or `/wizard` to implement something right away."
+
+## Output
+
+- **Save location:** `../<project-name>/` (adjacent to this repo in the parent directory)
+- **Final deliverable:** A fully populated project directory containing `CLAUDE.md`, `.claude/skills/`, `.claude/agents/`, `.claude/settings.json`, `reference/`, and `.gitignore`
+- **Format:** Directory tree with files (not a single document)
+- **Confirmation:** Phase 6 summary printed to chat; project is immediately usable via `cd ../<project-name> && claude`
 
 ## Important Notes
 - This skill creates files OUTSIDE the current project directory (in the parent). This is the intended behavior.

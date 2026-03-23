@@ -3,11 +3,22 @@ name: existing-project
 description: Install Claude Code expert toolkit into an existing project. Use when the user says "add to my project", "install into existing", "set up existing project", "integrate", "add skills to this project", or wants to enhance an already-started codebase with Claude Code best practices.
 argument-hint: "[project path or 'here' for current directory]"
 disable-model-invocation: true
+allowed-tools: Read, Write, Bash, Glob, Grep
 ---
 
 # Existing Project Integration
 
 Add the Claude Code expert toolkit to a project that already exists. Non-destructive by default. Only adds files — never modifies or deletes existing ones without explicit permission.
+
+## Goal
+Install skills, agents, and reference guides into an existing codebase non-destructively. Configure CLAUDE.md to register them. Leave the user with a working Claude Code setup tailored to their tech stack. Done when the summary report is presented and user confirms.
+
+## Dependencies
+- Tools: Read, Write, Bash, Glob, Grep
+- Source paths: `available-skills/`, `available-agents/`, `reference/` (must run from claude-code-expert project root)
+
+## Context
+Reads `available-skills/INDEX.md` and `available-agents/INDEX.md` to know what's installable. Reads the target project's existing CLAUDE.md, settings, and config files to avoid conflicts.
 
 ## Process
 

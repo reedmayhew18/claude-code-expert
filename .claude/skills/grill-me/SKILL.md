@@ -2,9 +2,25 @@
 name: grill-me
 description: Deep interview to reach shared understanding before building. Use when starting a complex feature, when requirements are unclear, or when the user says "grill me", "interview me", "ask me questions", "let's figure this out", or "grill me lightly" for a quick version.
 argument-hint: "[lightly] [feature or idea to explore]"
+allowed-tools: Read, Grep, Glob
 ---
 
 # Grill Me - Design Tree Exploration
+
+## Goal
+
+Reach a shared, unambiguous understanding of what the user wants to build before any implementation begins. Success = a concrete implementation plan the user has approved, with all blocking decisions resolved.
+
+## Dependencies
+
+- Tools: Read, Grep, Glob (read-only — this skill gathers information, never modifies files)
+- No external services or MCP servers required
+
+## Context
+
+This skill reads the existing project (CLAUDE.md, README, config files) to pre-fill known answers before asking any questions. The less the user has to repeat themselves, the better. Reference `reference/02-best-practices.md` if uncertain about Claude Code patterns.
+
+---
 
 Interview the user about their plan until we reach a shared understanding. Walk down each branch of the design tree, resolving dependencies between decisions one by one.
 
@@ -64,6 +80,9 @@ After all questions are answered:
 3. Propose a concrete implementation plan
 4. Ask if anything was missed
 
+**CHECKPOINT:** Present the full synthesis to the user. Do NOT recommend next steps until they confirm.
+Ask: "Does this capture everything accurately? Anything missing or wrong before we move to implementation?"
+
 ## Process (Light Mode)
 
 ### Phase 1: Quick Context
@@ -79,6 +98,16 @@ After all questions are answered:
 1. Summarize decisions in bullet points
 2. Note anything deferred for later
 3. Recommend next step (usually `/wizard` or `/plan-and-spec`)
+
+**CHECKPOINT:** Present the summary to the user before recommending next steps.
+Ask: "Does this look right? Ready to move forward, or anything to adjust?"
+
+## Output
+
+- **Format:** Inline chat — a structured summary presented in the conversation, not saved to a file
+- **Full mode deliverable:** Decisions list + tensions/tradeoffs + concrete implementation plan
+- **Light mode deliverable:** Bullet-point decisions + deferred items + recommended next step
+- **Save location:** None by default. If the user wants it persisted, write to `PLAN.md` or `PROGRESS.md` in the project root and note it survives context compaction.
 
 ## Key Principle
 The goal is NOT to ask a fixed list of questions. The goal is to dynamically explore the design tree until the level of clarity matches the mode: **Full mode = zero ambiguity. Light mode = enough to start.**

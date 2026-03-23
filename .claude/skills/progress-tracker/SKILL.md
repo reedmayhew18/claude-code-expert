@@ -3,9 +3,21 @@ name: progress-tracker
 description: Create and update progress/handoff documents for long-running work. Use when nearing context limits, switching tasks, ending a session, or when the user says "save progress", "handoff", "wrap up", or "I need to pick this up later".
 argument-hint: "[save/load/update]"
 disable-model-invocation: true
+allowed-tools: Read, Write, Glob
 ---
 
 # Progress Tracker
+
+## Goal
+Produce or update a PROGRESS.md file in the project root that captures enough state for any future session to resume work without loss. Success = a file exists that answers: what's done, what's in flight, what's next, and what decisions were made.
+
+## Dependencies
+**Tools:** Read (load existing PROGRESS.md and source files), Write (save PROGRESS.md), Glob (find relevant files)
+**Save location:** `PROGRESS.md` in the project root (same directory as CLAUDE.md)
+
+## Context
+On `load`: read PROGRESS.md and any files listed under "In Progress" to restore full awareness before resuming.
+On `save`/`update`: read the current PROGRESS.md (if it exists) to merge — do not overwrite completed items.
 
 Maintain external state files that survive context resets, compaction, and session changes.
 
@@ -46,7 +58,9 @@ Create or update PROGRESS.md with:
 ```
 
 ### Load: `/progress-tracker load`
-Read PROGRESS.md and resume work from where we left off.
+Read PROGRESS.md and any files listed under "In Progress". Summarize the current state to the user.
+
+**CHECKPOINT:** Present the loaded state summary. Ask: "Here's where we left off — does this match your expectations, or has anything changed?" Do NOT resume work until the user confirms.
 
 ### Update: `/progress-tracker update`
 Update the existing PROGRESS.md with current state without starting fresh.

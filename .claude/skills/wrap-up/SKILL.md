@@ -3,9 +3,21 @@ name: wrap-up
 description: End-of-session retrospective that captures accomplishments, learnings, and decisions to project memory. Use when the user says "wrap up", "end session", "what did we do", "save what we learned", "session summary", "I'm done for now", or when context is approaching capacity.
 argument-hint: "[quick|full|decisions-only]"
 disable-model-invocation: true
+allowed-tools: Read, Write, Edit, Bash, Glob
 ---
 
 # Session Wrap-Up
+
+## Goal
+Capture session accomplishments, decisions, and next steps into persistent memory files so future sessions start with full context. Success = PROGRESS.md written/updated and user feels the session is properly closed.
+
+## Dependencies
+- Tools: Read, Write, Edit, Bash, Glob
+- Reads `git diff`, `git log` for ground-truth change history
+- Writes to project root (PROGRESS.md) and `.claude/memory/` (LEARNINGS.md, DECISIONS.md)
+
+## Context
+Reads existing PROGRESS.md, PLAN.md, and HANDOFF.md if present to merge rather than overwrite prior session records.
 
 Capture what happened this session so future sessions start smarter.
 
