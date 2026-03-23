@@ -1,7 +1,7 @@
 ---
 name: skill-catalog
 description: Browse, install, and uninstall skills and agents from the available library. Check for new ones online. Use when the user says "what skills are available", "install skill", "add skill", "remove skill", "skill catalog", "list available", "check for updates", or wants to set up a project with specific capabilities.
-argument-hint: "[list|install|uninstall|update] [skill-or-agent-name]"
+argument-hint: "[list|install|uninstall|restore|update] [skill-or-agent-name]"
 disable-model-invocation: true
 allowed-tools: Read, Write, Bash, Grep, Glob, WebFetch
 ---
@@ -37,6 +37,23 @@ To install into a DIFFERENT project:
 2. Confirm with user before removing
 3. Move back to `available-skills/` or `available-agents/`
 4. Do NOT uninstall core skills (project-init, wizard, tdd, code-review, refactor, context-doctor, skill-creator, grill-me, git-workflow, plan-and-spec, progress-tracker, voice-style, voice-creator, skill-catalog, research, existing-project, new-project)
+
+### `/skill-catalog restore <name>`
+Restore a customized skill or agent back to its original version.
+
+1. Check if the skill/agent's `description:` field ends with `(Customized)`
+2. If not customized, report: "This skill hasn't been customized — nothing to restore."
+3. If customized, fetch the original from GitHub:
+   - Skills: `WebFetch https://raw.githubusercontent.com/reedmayhew18/claude-code-expert/main/.claude/skills/<name>/SKILL.md`
+   - If not found there, try: `WebFetch https://raw.githubusercontent.com/reedmayhew18/claude-code-expert/main/available-skills/<name>/SKILL.md`
+   - Agents: `WebFetch https://raw.githubusercontent.com/reedmayhew18/claude-code-expert/main/.claude/agents/<name>.md`
+   - If not found there, try: `WebFetch https://raw.githubusercontent.com/reedmayhew18/claude-code-expert/main/available-agents/<name>.md`
+4. Show the user a diff between their customized version and the original
+5. If they confirm, replace with the original
+6. If the fetch fails, report: "Couldn't reach GitHub to get the original. Check your connection."
+
+### `/skill-catalog restore all`
+Scan all skills and agents for descriptions ending in `(Customized)`. List them and offer to restore each one individually or all at once.
 
 ### `/skill-catalog update`
 Check GitHub for new or updated skills and agents.
