@@ -7,14 +7,14 @@
 [![Built with Claude Code](https://img.shields.io/badge/Built%20with-Claude%20Code-blueviolet?style=for-the-badge&logo=anthropic)](https://claude.ai/code)
 [![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue?style=for-the-badge)](LICENSE)
 
-[![Skills](https://img.shields.io/badge/Skills-21%20active%20·%2030%20available-0078D4?style=flat-square)](https://github.com/reedmayhew18/claude-code-expert/tree/main/.claude/skills)
+[![Skills](https://img.shields.io/badge/Skills-21%20active%20·%2031%20available-0078D4?style=flat-square)](https://github.com/reedmayhew18/claude-code-expert/tree/main/.claude/skills)
 [![Agents](https://img.shields.io/badge/Agents-19%20specialized-E86C00?style=flat-square)](https://github.com/reedmayhew18/claude-code-expert/tree/main/.claude/agents)
 [![Voice Styles](https://img.shields.io/badge/Voice%20Styles-9%20built--in-ff69b4?style=flat-square)](#-voice-styles-9-built-in)
 [![Reference](https://img.shields.io/badge/Reference%20Guides-9%20·%207%2C752%20lines-2ea44f?style=flat-square)](https://github.com/reedmayhew18/claude-code-expert/tree/main/reference)
 [![Sources](https://img.shields.io/badge/Sources%20Analyzed-104-FFD700?style=flat-square)](#-how-it-was-built)
 [![Size](https://img.shields.io/badge/Active%20Size-1.3MB-lightgrey?style=flat-square)](#)
 
-**51 skills · 19 agents · 9 voice styles · 9 reference guides**
+**52 skills · 19 agents · 9 voice styles · 9 reference guides**
 **Built by Claude Code after analyzing 104 resources**
 
 Drop it into any project. Start a new one from scratch. Or just clone it and ask questions.<br>
@@ -61,7 +61,7 @@ That's it. `/new-project` interviews you about what you're building, then create
 
 ## 📦 What's Inside
 
-### 🛠️ Skills (21 active + 30 available)
+### 🛠️ Skills (21 active + 31 available)
 
 Skills are reusable workflows that Claude loads automatically when relevant, or that you trigger with `/skill-name`.
 
@@ -276,7 +276,7 @@ claude-code-expert/
 │   │   └── voice-style/styles/   # 9 voice templates
 │   ├── agents/                   # 6 active agents
 │   └── memory/                   # Project-local memory
-├── available-skills/             # 30 installable skills
+├── available-skills/             # 31 installable skills
 └── available-agents/             # 13 installable agents
 ```
 

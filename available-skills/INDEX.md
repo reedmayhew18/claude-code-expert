@@ -39,6 +39,7 @@ Skills ready to install into any project. Use `/skill-store` to browse and insta
 | Skill | Description |
 |-------|-------------|
 | `mcp-builder` | Build high-quality MCP servers: deep research, implementation, testing, and evaluation |
+| `sudo` | Run sudo commands in a visible terminal window with interactive password prompt — supports GNOME, XFCE, KDE, xterm, WSL, macOS |
 | `webapp-testing` | Test web applications with Playwright: screenshots, interaction, console logs, server management |
 
 ## ML / AI
