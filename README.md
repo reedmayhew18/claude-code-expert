@@ -123,6 +123,7 @@ Install with `/skill-store install <name>`, or auto-recommended when creating ne
 | Skill | What it does |
 |---|---|
 | `mcp-builder` | Build high-quality MCP servers: deep research, implementation, testing, and evaluation |
+| `sudo` | Run sudo commands in a visible terminal window with interactive password — GNOME, XFCE, KDE, xterm, WSL, macOS |
 | `webapp-testing` | Test web applications with Playwright: screenshots, interaction, console logs, server management |
 
 **ML / AI**
