@@ -86,9 +86,7 @@ fi
 echo "========================================" | tee -a "$LOGFILE"
 echo "EXIT_CODE=$EXIT_CODE" >> "$LOGFILE"
 
-echo ""
-echo "Press Enter to close this window..."
-read -r
+exit $EXIT_CODE
 ```
 Make executable: `chmod +x /tmp/claude_sudo_runner_*.sh`
 
