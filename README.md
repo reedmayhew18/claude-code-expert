@@ -6,7 +6,7 @@
 
 [![Built with Claude Code](https://img.shields.io/badge/Built%20with-Claude%20Code-blueviolet?style=for-the-badge&logo=anthropic)](https://claude.ai/code)
 [![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue?style=for-the-badge)](LICENSE)
-### Now with Code → Skill Compiler!
+### Now with Code ➡️ Skill Compiler!
 [![Skills](https://img.shields.io/badge/Skills-22%20active%20·%2031%20available-0078D4?style=flat-square)](https://github.com/reedmayhew18/claude-code-expert/tree/main/.claude/skills)
 [![Agents](https://img.shields.io/badge/Agents-19%20specialized-E86C00?style=flat-square)](https://github.com/reedmayhew18/claude-code-expert/tree/main/.claude/agents)
 [![Voice Styles](https://img.shields.io/badge/Voice%20Styles-9%20built--in-ff69b4?style=flat-square)](#-voice-styles-9-built-in)
