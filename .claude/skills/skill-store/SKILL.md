@@ -30,29 +30,47 @@ Give the user full visibility and control over their skill/agent library — ins
 ## Commands
 
 ### `/skill-store list`
-Read and display both index files:
-- `available-skills/INDEX.md` - Skills not currently loaded
-- `available-agents/INDEX.md` - Agents not currently loaded
 
-Also show what's currently active:
-- `.claude/skills/` - Currently loaded skills
-- `.claude/agents/` - Currently loaded agents
+Show two sections: **Installed** and **Available (Not Installed)**.
+
+**Installed:** List everything in `.claude/skills/` and `.claude/agents/` with one-line descriptions.
+
+**Available:** Fetch the full list from GitHub by querying BOTH locations:
+```bash
+curl -s "https://api.github.com/repos/reedmayhew18/claude-code-expert/contents/available-skills"
+curl -s "https://api.github.com/repos/reedmayhew18/claude-code-expert/contents/available-agents"
+curl -s "https://api.github.com/repos/reedmayhew18/claude-code-expert/contents/.claude/skills"
+curl -s "https://api.github.com/repos/reedmayhew18/claude-code-expert/contents/.claude/agents"
+```
+Combine all results into ONE alphabetically sorted list. Exclude anything already installed locally. Mark each as (skill) or (agent). Do NOT split into separate "available-skills" and ".claude/skills" sections: the user doesn't care where it lives on GitHub, just what's available.
 
 ### `/skill-store install <name>`
-Install a skill from the available library.
-1. Check if `<name>` exists in `available-skills/` (folder)
-2. If not found locally, check GitHub (see Update section below)
-3. Copy to `.claude/skills/<name>/`
-4. Confirm installation
+Install a skill or agent. Auto-detects type.
 
-### `/skill-store install-agent <name>`
-Install an agent from the available library.
-1. Check if `<name>` exists in `available-agents/` (file)
-2. If not found locally, check GitHub (see Update section below)
-3. Copy to `.claude/agents/<name>.md`
-4. Confirm installation
+**Step 1: Find it.** Check locally first (`available-skills/`, `available-agents/`). If not found locally, check GitHub:
+```bash
+# Try all four locations
+curl -s "https://api.github.com/repos/reedmayhew18/claude-code-expert/contents/available-skills/<name>"
+curl -s "https://api.github.com/repos/reedmayhew18/claude-code-expert/contents/.claude/skills/<name>"
+curl -s "https://api.github.com/repos/reedmayhew18/claude-code-expert/contents/available-agents/<name>.md"
+curl -s "https://api.github.com/repos/reedmayhew18/claude-code-expert/contents/.claude/agents/<name>.md"
+```
 
-Note: `install` also works for agents (auto-detects whether it's a skill or agent), but `install-agent` is preferred for clarity.
+**Step 2: Download ALL files.** Skills are directories that may contain subdirectories (references/, scripts/, assets/). You MUST download every file in the skill directory, not just SKILL.md:
+```bash
+# List the directory contents first
+curl -s "https://api.github.com/repos/reedmayhew18/claude-code-expert/contents/<path-to-skill>"
+# This returns a JSON array. For each item:
+#   - If type is "file": download it with curl -s <download_url> -o <local_path>
+#   - If type is "dir": recurse into it and list+download its contents too
+```
+Create the local directory structure to match: `.claude/skills/<name>/`, `.claude/skills/<name>/references/`, `.claude/skills/<name>/scripts/`, etc.
+
+**Step 3: Verify.** List all downloaded files to confirm nothing was missed.
+
+**Step 4: Confirm.** Report what was installed and how many files.
+
+For agents (single .md file): download to `.claude/agents/<name>.md`.
 
 **To install into a DIFFERENT project** (works for both):
 1. Ask for the target project path
