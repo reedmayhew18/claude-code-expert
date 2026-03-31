@@ -3,7 +3,6 @@
 # 🧠 Claude Code Expert
 
 ### The Ultimate Claude Code Toolkit
-#### Now with Code → Skill Compiler: transpile any script into an LLM-native skill
 
 [![Built with Claude Code](https://img.shields.io/badge/Built%20with-Claude%20Code-blueviolet?style=for-the-badge&logo=anthropic)](https://claude.ai/code)
 [![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue?style=for-the-badge)](LICENSE)
@@ -14,6 +13,7 @@
 [![Reference](https://img.shields.io/badge/Reference%20Guides-9%20·%207%2C752%20lines-2ea44f?style=flat-square)](https://github.com/reedmayhew18/claude-code-expert/tree/main/reference)
 [![Sources](https://img.shields.io/badge/Sources%20Analyzed-104-FFD700?style=flat-square)](#-how-it-was-built)
 [![Size](https://img.shields.io/badge/Active%20Size-1.3MB-lightgrey?style=flat-square)](#)
+### Now with Code ➡️ Skill Compiler!
 
 **54 skills · 19 agents · 9 voice styles · 9 reference guides**
 **Built by Claude Code after analyzing 104 resources**
