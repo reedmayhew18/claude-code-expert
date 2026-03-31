@@ -3,7 +3,8 @@
 # 🧠 Claude Code Expert
 
 ### The Ultimate Claude Code Toolkit
-#### Now with Code → Skill Compiler: transpile any script into an LLM-native skill
+#### Now with Code → Skill Compiler:
+Transpile any code into an LLM-native skill
 
 [![Built with Claude Code](https://img.shields.io/badge/Built%20with-Claude%20Code-blueviolet?style=for-the-badge&logo=anthropic)](https://claude.ai/code)
 [![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue?style=for-the-badge)](LICENSE)
