@@ -27,6 +27,7 @@ reference/                          # Claude Code expertise library
 │   ├── code-review/                # Isolated review via Explore agent
 │   ├── refactor/                   # Safe refactoring with char tests
 │   ├── context-doctor/             # Fix context window issues
+│   ├── compile-to-skill/           # Transpile code into markdown skills
 │   ├── skill-creator/              # Guided skill creation
 │   ├── skill-store/              # Browse/install available skills+agents
 │   ├── grill-me/                   # Deep interview before building
