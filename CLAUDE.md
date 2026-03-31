@@ -28,6 +28,7 @@ reference/                          # Claude Code expertise library
 │   ├── refactor/                   # Safe refactoring with char tests
 │   ├── context-doctor/             # Fix context window issues
 │   ├── compile-to-skill/           # Transpile code into markdown skills
+│   ├── lat-md-setup/               # Set up lat.md knowledge graph
 │   ├── skill-creator/              # Guided skill creation
 │   ├── skill-store/              # Browse/install available skills+agents
 │   ├── grill-me/                   # Deep interview before building

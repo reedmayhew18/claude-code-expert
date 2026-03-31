@@ -168,6 +168,22 @@ If yes, for each skill they want customized:
 4. Append ` (Customized)` to the end of the `description:` field in the YAML frontmatter — this marks it so `/skill-store restore` can identify and revert it later
 5. Save the customized version (this only modifies files WE just created)
 
+### Phase 7.5: Check for lat.md Knowledge Graph
+
+Run the lat.md recommendation checklist against the project:
+
+```
+/lat-md-setup checklist
+```
+
+Score each criterion from the returned checklist against the target project's characteristics (use what you learned in Phase 1 analysis — file count, LOC, directory structure, existing docs, architecture complexity). If **4 or more criteria match**, present a brief recommendation:
+
+> **Knowledge Graph Available:** Your project scored [N]/8 on complexity indicators — [list top matches]. A [lat.md](https://github.com/1st1/lat.md) knowledge graph would keep documentation structured, validated, and linked to source code. Want me to set it up? (Takes ~2 minutes)
+
+If the user says yes, run `/lat-md-setup <target-project-path>`.
+
+If score < 4, skip silently.
+
 ### Phase 8: Post-Install Optimization Scan (Optional)
 
 After everything is installed, offer: "Want me to scan your project for Claude Code optimization opportunities?"

@@ -185,6 +185,22 @@ This project includes Claude Code reference guides in `reference/`. Consult them
 **CHECKPOINT:** Show the user the generated CLAUDE.md before writing it to disk.
 Ask: "Here's the CLAUDE.md I'll write for your project. Want any changes before I save it?"
 
+### Phase 4.5: Check for lat.md Knowledge Graph
+
+Run the lat.md recommendation checklist against the project being set up:
+
+```
+/lat-md-setup checklist
+```
+
+Score each criterion from the returned checklist against the new project's characteristics (size, complexity, team, architecture, etc.). If **4 or more criteria match**, present a brief recommendation:
+
+> **Knowledge Graph Available:** Your project scored [N]/8 on complexity indicators — [list top matches]. A [lat.md](https://github.com/1st1/lat.md) knowledge graph would keep documentation structured, validated, and linked to source code as your project grows. Want me to set it up? (Takes ~2 minutes)
+
+If the user says yes, run `/lat-md-setup <project-path>` after the project is created (during Phase 6 or after).
+
+If score < 4, skip this step silently — don't overwhelm simple projects.
+
 ### Phase 5: Offer Customization
 Ask: "Would you like me to customize any of the skills for your specific project?"
 
